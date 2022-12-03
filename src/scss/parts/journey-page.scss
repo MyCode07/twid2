@@ -1,0 +1,234 @@
+.journey {
+    padding-top: 136px;
+
+    @include adaptive-value("padding-bottom", 120, 47, 1);
+    position: relative;
+
+    @media (max-width: $mobileWidthMax) {
+        padding-top: 89px;
+    }
+
+    &:after {
+        @media (max-width: $mobileWidthMax) {
+            height: 27px;
+            background-image: url("@img/noise.png");
+            background-size: 100% 27px;
+        }
+    }
+
+    // .journey__container
+
+    &__container {
+    }
+
+    // .journey__body
+
+    &__body {
+        h1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width: $mobileWidthMax) {
+                flex-wrap: wrap;
+                justify-content: center;
+
+                span {
+                    margin: 0 0.25em;
+                }
+            }
+        }
+    }
+
+    // .journey__image
+
+    &__image {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: -10px;
+            transform: translate(-50%, 0);
+            width: 100%;
+            max-width: 1180px;
+            height: 10px;
+            background: $darkGray;
+
+            @media (max-width: $mobileWidthMax) {
+                display: none;
+            }
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            @include adaptive-value("height", 599, 316, 1);
+        }
+    }
+
+    @media (max-width: $mobileWidthMax) {
+        ._section-noise {
+            img {
+                height: 26px;
+            }
+        }
+    }
+}
+
+.exclusive {
+    @include adaptive-value("margin-bottom", 95, 44, 1);
+
+    // .exclusive__container
+
+    &__container {
+    }
+
+    // .exclusive__body
+
+    &__body {
+    }
+
+    h2 {
+        @include adaptive-value("padding-bottom", 56, 30, 1);
+    }
+
+    // .exclusive__top
+
+    &__top {
+        position: relative;
+    }
+
+    // .exclusive__text
+
+    &__text {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        @include adaptive-value("padding-right", 23, 0, 1);
+        @include adaptive-value("padding-bottom", 20, 0, 1);
+        @include adaptive-value("padding-left", 57, 15, 1);
+        @include adaptive-value("font-size", 18, 14, 1);
+        width: 480px;
+
+        background: #ffffff;
+
+        font-style: normal;
+        font-weight: 400;
+        line-height: 133%;
+        color: #000000;
+        z-index: 2;
+
+        @media (max-width: $containerWithPadding) {
+            left: 50px;
+        }
+
+        @media (max-width: $laptopWidth) {
+            left: 30px;
+        }
+
+        @media (max-width: $mobileWidthMax) {
+            font-size: 14px;
+            width: 315px;
+            left: 0;
+
+            a {
+                font-size: 14px;
+            }
+        }
+
+        a {
+            display: block;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 133%;
+            color: #000000;
+            position: relative;
+            @include adaptive-value("padding-bottom", 14, 8, 1);
+            @include adaptive-value("margin-top", 20, 14, 1);
+
+            &:after {
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                width: 167px;
+                height: 6px;
+                background: $red;
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 167px;
+                bottom: 6px;
+                width: 6px;
+                height: 6px;
+                background: $red;
+            }
+        }
+    }
+
+    // .exclusive__image
+
+    &__image {
+        // .exclusive__image-container
+
+        &-container {
+            img {
+                object-fit: cover;
+                width: 100%;
+                @include adaptive-value("height", 800, 400, 1);
+            }
+        }
+    }
+}
+
+.news {
+    @media (min-width: $mobileWidthMin) {
+        @include adaptive-value("padding-bottom", 445, 150, 1);
+    }
+
+    @media (max-width: $mobileWidthMax) {
+        padding-bottom: 10px;
+    }
+
+    // .news__container
+
+    &__container {
+    }
+
+    // .news__body
+
+    &__body {
+    }
+
+    // .news__description
+
+    &__description {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%px;
+        color: #21495d;
+        margin-top: 27px;
+    }
+
+    // .news__columns
+
+    // .news__posts
+
+    &__posts {
+        @include adaptive-value("margin-top", 82, 26, 1);
+
+        & > :not(:last-child) {
+            @include adaptive-value("margin-bottom", 60, 40, 1);
+        }
+
+        article {
+        }
+    }
+}

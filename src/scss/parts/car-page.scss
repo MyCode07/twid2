@@ -1,0 +1,23 @@
+.car {
+    padding-top: 114px;
+
+    h1 {
+        span {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 1;
+            color: $mainColor;
+            display: block;
+            margin-top: 10px;
+        }
+    }
+
+    .model__item {
+        margin-bottom: 40px;
+
+        &:before {
+            display: none;
+        }
+    }
+}

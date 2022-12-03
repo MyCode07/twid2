@@ -1,0 +1,158 @@
+.auto {
+    padding-top: 136px;
+    @include adaptive-value("margin-bottom", 90, 25, 1);
+
+    // .auto__container
+
+    &__container {
+    }
+
+    // .auto__body
+
+    &__body {
+    }
+
+    // .auto__tabs
+
+    &__tabs {
+        @include adaptive-value("margin-top", 73, 58, 1);
+        @include adaptive-value("margin-bottom", 40, 20, 1);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        place-content: center;
+
+        a {
+            padding: 18px 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $mainColor;
+            border-radius: 10px;
+
+            span {
+                text-align: center;
+                flex: 1 1 auto;
+                display: block;
+                
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 133%;
+                color: $mainColor;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    border: 1px solid $red;
+                    span {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    // .auto__image
+
+    &__image {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            top: -10px;
+            transform: translate(-50%, 0);
+            width: 100%;
+            max-width: 1180px;
+            height: 10px;
+            background: $red;
+
+            @media (max-width: $mobileWidthMax) {
+                display: none;
+            }
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+
+            @media (max-width: $mobileWidthMax) {
+                height: 316px;
+                object-position: left;
+            }
+        }
+    }
+}
+
+.model {
+    @media (min-width: 992px) {
+        @include adaptive-value("margin-bottom", 440, 205, 1);
+    }
+
+    // .model__container
+
+    &__container {
+    }
+
+    // .model__body
+
+    &__body {
+    }
+
+    // .model__item
+
+    &__item {
+        width: 100%;
+
+        @media (max-width: $mobileWidthMax) {
+            width: calc(100% + 30px);
+            margin-left: -15px;
+        }
+
+        @include adaptive-value("margin-bottom", 185, 120, 1);
+        position: relative;
+
+        &:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -124px;
+            border-radius: 5px;
+            background-color: $lightGray;
+            @include adaptive-value("height", 90, 45, 1);
+            width: 100%;
+
+            background-image: url("@img/noise-big.png");
+
+            @media (max-width: $mobileWidthMax) {
+                bottom: -75px;
+            }
+        }
+
+        // .model__item-top
+
+        &-top {
+           
+        }
+    }
+
+    // .model__grid
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+
+        @media (max-width: 1270px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $mobileWidthMax) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 30px 0;
+        }
+          background-image: url("@img/cars/alpha-romeo/");
+    }
+}

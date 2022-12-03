@@ -1,0 +1,167 @@
+// .menu
+.menu {
+    position: absolute;
+    left: 30px;
+    top: 65px;
+    z-index: 5;
+
+    @media (max-width: $laptopWidth) {
+        left: -30px;
+    }
+
+    @media (max-width: $mobileWidthMax) {
+        position: fixed;
+        left: 0;
+        top: 70px;
+        transform: translate(-150%, 0);
+        transition: all 0.3s ease 0s;
+        z-index: 20;
+
+        width: 100%;
+        height: 100%;
+
+        &._open {
+            transform: translate(0, 0);
+        }
+    }
+
+    // .menu-page
+    &-page {
+        display: none;
+        @media (max-width: $mobileWidthMax) {
+            display: block;
+        }
+    }
+
+    nav {
+        @media (max-width: $mobileWidthMax) {
+            width: 100%;
+            height: 100%;
+            background-color: $mainColor;
+        }
+
+        ul {
+            display: block;
+
+            @media (max-width: $laptopWidth) {
+                padding-left: 30px;
+            }
+
+            @media (max-width: $mobileWidthMax) {
+                padding: 0;
+            }
+
+            li {
+                display: block;
+                position: relative;
+                padding: 0 0 9px 20px;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    bottom: 0;
+                    @include adaptive-value("width", 750, 400, 1);
+
+                    height: 1px;
+                    background: linear-gradient(90deg, #fff, #ffffff00);
+
+                    @media (max-width: $mobileWidthMax) {
+                        display: none;
+                    }
+
+                    transition: all 0.3s ease 0s;
+                }
+
+                &:last-of-type {
+                    display: none;
+                }
+
+                @media (max-width: $laptopWidth) {
+                    padding: 0 0 9px 30px;
+                }
+
+                @media (max-width: $mobileWidthMax) {
+                    padding: 16px 16px 28px 16px;
+
+                    border-bottom: 1px solid #fff;
+
+                    &:last-of-type {
+                        display: block;
+                        border-bottom: 0;
+                    }
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        &:before {
+                            opacity: 0;
+                        }
+
+                        a.hidden-animated {
+                            max-width: calc(100vw + 18px) !important;
+                            visibility: visible;
+                            opacity: 1;
+
+                            @media (max-width: $laptopWidth) {
+                                max-width: calc(100vw + 30px) !important;
+                            }
+                        }
+                    }
+                }
+
+                a {
+                    display: block;
+
+                    font-style: normal;
+                    font-weight: 400;
+
+                    line-height: 1;
+                    letter-spacing: 0.03em;
+                    text-transform: uppercase;
+                    color: #ffffff;
+
+                    @include adaptive-value("font-size", 50, 30, 1);
+
+                    &.hidden-animated {
+                        position: absolute;
+                        inset: 0;
+                        background-color: $red;
+                        width: calc(100vw - 77px);
+                        transform: translate(0, 0);
+                        padding-left: 20px;
+
+                        visibility: hidden;
+                        opacity: 0;
+                        @include adaptive-value("max-width", 750, 500, 1);
+
+                        &:before {
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            bottom: 0;
+                            width: 8px;
+                            height: 8px;
+                            background-color: $darkGray;
+                        }
+
+                        @media (max-width: $laptopWidth) {
+                            width: calc(100vw - 17px);
+                            padding-left: 30px;
+                        }
+
+                        transition: all 0.3s ease 0s;
+
+                        @media (max-width: $mobileWidthMax) {
+                            display: none;
+                        }
+                    }
+
+                    @media (max-width: $mobileWidthMax) {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

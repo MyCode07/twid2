@@ -1,0 +1,1178 @@
+@@include('html/header-page.html',{'title': 'Plan your journey'})
+<main class="page">
+
+    <section class="journey _has-noise _has-top-noise">
+        <div class="journey__container container">
+            <div class="journey__body">
+                <h1 class="_red-title _metal"><span>plan</span><span>your</span><span>journey</span></h1>
+                <div class="journey__form">
+                    <button class="journey__form-button" id="open-countries">
+                        <span>COUNTRIES</span>
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.23438 17.9863C1.3457 17.9863 1.45996 17.9658 1.57715 17.9248C1.69434 17.8896 1.82324 17.8311 1.96387 17.749L6.4375 15.3408L11.2979 18.0654C11.6143 18.2412 11.9424 18.3291 12.2822 18.3291C12.6045 18.3291 12.8975 18.2529 13.1611 18.1006L17.7578 15.4902C18.0215 15.3438 18.2148 15.165 18.3379 14.9541C18.4609 14.7373 18.5225 14.4824 18.5225 14.1895V2.35059C18.5225 2.02832 18.4346 1.7793 18.2588 1.60352C18.0889 1.42773 17.8457 1.33984 17.5293 1.33984C17.418 1.33984 17.3037 1.36035 17.1865 1.40137C17.0693 1.43652 16.9375 1.49219 16.791 1.56836L12.1328 4.16113L7.36035 1.23438C7.09082 1.07031 6.79492 0.988281 6.47266 0.988281C6.14453 0.988281 5.84277 1.07031 5.56738 1.23438L0.99707 3.83594C0.739258 3.98242 0.548828 4.16406 0.425781 4.38086C0.302734 4.5918 0.241211 4.84668 0.241211 5.14551V16.9668C0.241211 17.2949 0.326172 17.5469 0.496094 17.7227C0.671875 17.8984 0.917969 17.9863 1.23438 17.9863ZM5.86621 13.9434L1.90234 16.123C1.84375 16.1523 1.7998 16.167 1.77051 16.167C1.69434 16.167 1.65625 16.1201 1.65625 16.0264V5.48828C1.65625 5.38281 1.67676 5.29199 1.71777 5.21582C1.76465 5.13379 1.84082 5.06348 1.94629 5.00488L5.5498 2.89551C5.6084 2.86621 5.66113 2.83691 5.70801 2.80762C5.76074 2.77832 5.81348 2.74902 5.86621 2.71973V13.9434ZM7.28125 14.084V2.9043C7.32812 2.92773 7.375 2.9541 7.42188 2.9834C7.46875 3.00684 7.51562 3.0332 7.5625 3.0625L11.4824 5.45312V16.4395C11.418 16.4043 11.3535 16.3691 11.2891 16.334C11.2246 16.3047 11.1602 16.2725 11.0957 16.2373L7.28125 14.084ZM12.8975 16.5977V5.36523L16.8613 3.20312C16.9199 3.17383 16.9609 3.15918 16.9844 3.15918C17.0254 3.15918 17.0547 3.1709 17.0723 3.19434C17.0957 3.21777 17.1074 3.25293 17.1074 3.2998V13.8379C17.1074 13.9434 17.084 14.0371 17.0371 14.1191C16.9961 14.2012 16.9229 14.2715 16.8174 14.3301L13.293 16.3779C13.2285 16.4189 13.1611 16.457 13.0908 16.4922C13.0264 16.5273 12.9619 16.5625 12.8975 16.5977Z" />
+                        </svg>
+                    </button>
+                    <button class="journey__form-button" id="open-cars">
+                        <span>CARS</span>
+                        <svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.54785 5.96484C4.50684 6.15234 4.52734 6.2959 4.60938 6.39551C4.69141 6.49512 4.83789 6.54199 5.04883 6.53613C5.41211 6.51855 5.83105 6.50098 6.30566 6.4834C6.78613 6.45996 7.35742 6.44238 8.01953 6.43066C8.68164 6.41309 9.47266 6.4043 10.3926 6.4043C11.3184 6.4043 12.1123 6.41309 12.7744 6.43066C13.4365 6.44238 14.0049 6.45996 14.4795 6.4834C14.96 6.50098 15.3848 6.51855 15.7539 6.53613C15.959 6.54199 16.1025 6.49512 16.1846 6.39551C16.2666 6.2959 16.2871 6.15234 16.2461 5.96484C16.1934 5.73047 16.126 5.48145 16.0439 5.21777C15.9678 4.9541 15.8857 4.70801 15.7979 4.47949C15.7158 4.25098 15.6396 4.0752 15.5693 3.95215C15.4463 3.71777 15.2998 3.55078 15.1299 3.45117C14.9658 3.3457 14.7461 3.27246 14.4707 3.23145C14.2188 3.19629 13.7529 3.16992 13.0732 3.15234C12.3936 3.12891 11.5 3.11719 10.3926 3.11719C9.29102 3.11719 8.40039 3.12891 7.7207 3.15234C7.04688 3.16992 6.58105 3.19629 6.32324 3.23145C6.04785 3.27246 5.82812 3.3457 5.66406 3.45117C5.5 3.55078 5.35352 3.71777 5.22461 3.95215C5.1543 4.0752 5.07812 4.25098 4.99609 4.47949C4.91406 4.70801 4.83203 4.9541 4.75 5.21777C4.67383 5.48145 4.60645 5.73047 4.54785 5.96484ZM4.36328 12.0117C4.77344 12.0117 5.11914 11.874 5.40039 11.5986C5.68164 11.3174 5.82227 10.9688 5.82227 10.5527C5.82227 10.1426 5.68164 9.79688 5.40039 9.51562C5.11914 9.23438 4.77344 9.09375 4.36328 9.09375C3.94727 9.09375 3.59863 9.23438 3.31738 9.51562C3.04199 9.79688 2.9043 10.1426 2.9043 10.5527C2.9043 10.9688 3.04199 11.3174 3.31738 11.5986C3.59863 11.874 3.94727 12.0117 4.36328 12.0117ZM8.08984 11.6426H12.7041C13.0146 11.6426 13.2666 11.543 13.46 11.3438C13.6592 11.1445 13.7588 10.8896 13.7588 10.5791C13.7588 10.2686 13.6592 10.0166 13.46 9.82324C13.2666 9.62402 13.0146 9.52441 12.7041 9.52441H8.08984C7.78516 9.52441 7.5332 9.62402 7.33398 9.82324C7.13477 10.0166 7.03516 10.2686 7.03516 10.5791C7.03516 10.8896 7.13477 11.1445 7.33398 11.3438C7.5332 11.543 7.78516 11.6426 8.08984 11.6426ZM16.4395 12.0117C16.8555 12.0117 17.2012 11.874 17.4766 11.5986C17.7578 11.3174 17.8984 10.9688 17.8984 10.5527C17.8984 10.1426 17.7578 9.79688 17.4766 9.51562C17.2012 9.23438 16.8555 9.09375 16.4395 9.09375C16.0234 9.09375 15.6748 9.23438 15.3936 9.51562C15.1182 9.79688 14.9805 10.1426 14.9805 10.5527C14.9805 10.9688 15.1182 11.3174 15.3936 11.5986C15.6748 11.874 16.0234 12.0117 16.4395 12.0117ZM10.3926 14.6309C11.125 14.6309 11.8867 14.625 12.6777 14.6133C13.4746 14.5957 14.251 14.5723 15.0068 14.543C15.7627 14.5078 16.4541 14.4727 17.0811 14.4375C17.7139 14.3965 18.2266 14.3525 18.6191 14.3057C19.2695 14.2295 19.7734 14.0098 20.1309 13.6465C20.4941 13.2773 20.6758 12.7793 20.6758 12.1523V10.6934C20.6758 9.92578 20.6025 9.29297 20.4561 8.79492C20.3154 8.29102 20.04 7.78711 19.6299 7.2832L18.8564 6.33398C18.751 5.83594 18.625 5.34375 18.4785 4.85742C18.3379 4.37109 18.1973 3.93457 18.0566 3.54785C17.916 3.15527 17.7988 2.85645 17.7051 2.65137C17.459 2.13574 17.1104 1.72559 16.6592 1.4209C16.208 1.11035 15.6807 0.914062 15.0771 0.832031C14.8604 0.802734 14.5293 0.779297 14.084 0.761719C13.6387 0.738281 13.1025 0.723633 12.4756 0.717773C11.8545 0.706055 11.1602 0.700195 10.3926 0.700195C9.63086 0.700195 8.93652 0.706055 8.30957 0.717773C7.68848 0.729492 7.15527 0.74707 6.70996 0.770508C6.26465 0.788086 5.93359 0.808594 5.7168 0.832031C5.11914 0.914062 4.5918 1.11035 4.13477 1.4209C3.68359 1.72559 3.33789 2.13574 3.09766 2.65137C3.00391 2.85645 2.88379 3.15527 2.7373 3.54785C2.59668 3.93457 2.45312 4.37109 2.30664 4.85742C2.16602 5.34375 2.04297 5.83594 1.9375 6.33398L1.16406 7.2832C0.753906 7.78711 0.475586 8.29102 0.329102 8.79492C0.188477 9.29297 0.118164 9.92578 0.118164 10.6934V12.1523C0.118164 12.7793 0.296875 13.2773 0.654297 13.6465C1.01758 14.0098 1.52441 14.2295 2.1748 14.3057C2.57324 14.3525 3.08594 14.3965 3.71289 14.4375C4.33984 14.4727 5.03125 14.5078 5.78711 14.543C6.54883 14.5723 7.3252 14.5957 8.11621 14.6133C8.91309 14.625 9.67188 14.6309 10.3926 14.6309ZM10.3926 12.9961C9.67773 12.9961 8.93945 12.9873 8.17773 12.9697C7.42188 12.9521 6.68945 12.9287 5.98047 12.8994C5.27734 12.8701 4.6416 12.8379 4.07324 12.8027C3.50488 12.7676 3.04785 12.7295 2.70215 12.6885C2.35059 12.6475 2.09863 12.5391 1.94629 12.3633C1.79395 12.1875 1.71777 11.9414 1.71777 11.625V10.5264C1.71777 9.97559 1.7793 9.53906 1.90234 9.2168C2.02539 8.88867 2.21582 8.55176 2.47363 8.20605L3.43164 6.94922C3.47852 6.70312 3.54297 6.41895 3.625 6.09668C3.70703 5.76855 3.79785 5.4375 3.89746 5.10352C3.99707 4.76367 4.09961 4.44727 4.20508 4.1543C4.31055 3.86133 4.4043 3.62695 4.48633 3.45117C4.63281 3.14648 4.83496 2.91211 5.09277 2.74805C5.35059 2.58398 5.65527 2.48145 6.00684 2.44043C6.21191 2.41113 6.5166 2.38477 6.9209 2.36133C7.3252 2.33789 7.82031 2.32031 8.40625 2.30859C8.99219 2.29688 9.6543 2.29102 10.3926 2.29102C11.1367 2.29102 11.8018 2.2998 12.3877 2.31738C12.9795 2.3291 13.4775 2.34668 13.8818 2.37012C14.2861 2.39355 14.585 2.41699 14.7783 2.44043C15.1357 2.48145 15.4434 2.58691 15.7012 2.75684C15.959 2.9209 16.1611 3.15527 16.3076 3.45996C16.3955 3.62988 16.4893 3.8584 16.5889 4.14551C16.6885 4.43262 16.7881 4.74609 16.8877 5.08594C16.9873 5.41992 17.0781 5.75098 17.1602 6.0791C17.248 6.40723 17.3154 6.69727 17.3623 6.94922L18.3203 8.20605C18.5781 8.55176 18.7686 8.88867 18.8916 9.2168C19.0146 9.53906 19.0762 9.97559 19.0762 10.5264V11.625C19.0762 11.9414 19 12.1875 18.8477 12.3633C18.6953 12.5391 18.4404 12.6475 18.083 12.6885C17.7432 12.7295 17.2891 12.7676 16.7207 12.8027C16.1523 12.8379 15.5137 12.8701 14.8047 12.8994C14.1016 12.9287 13.3721 12.9521 12.6162 12.9697C11.8604 12.9873 11.1191 12.9961 10.3926 12.9961ZM1.7002 16.9424H2.72852C3.05078 16.9424 3.32324 16.8311 3.5459 16.6084C3.76855 16.3916 3.87988 16.1191 3.87988 15.791V13.6729L0.548828 12.9082V15.791C0.548828 16.1191 0.657227 16.3916 0.874023 16.6084C1.09668 16.8311 1.37207 16.9424 1.7002 16.9424ZM18.0742 16.9424H19.0938C19.4219 16.9424 19.6943 16.8311 19.9111 16.6084C20.1338 16.3916 20.2451 16.1191 20.2451 15.791V12.9082L16.9141 13.6729V15.791C16.9141 16.1191 17.0254 16.3916 17.248 16.6084C17.4707 16.8311 17.7461 16.9424 18.0742 16.9424Z" />
+                        </svg>
+                    </button>
+                    <button class="journey__form-button" id="open-calendar">
+                        <span>DATES</span>
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.18555 17.7871H15.8809C16.8249 17.7871 17.5312 17.5527 18 17.084C18.4753 16.6152 18.7129 15.9186 18.7129 14.9941V3.70508C18.7129 2.7806 18.4753 2.08398 18 1.61523C17.5312 1.14648 16.8249 0.912109 15.8809 0.912109H3.18555C2.24154 0.912109 1.5319 1.14648 1.05664 1.61523C0.587891 2.07747 0.353516 2.77409 0.353516 3.70508V14.9941C0.353516 15.9251 0.587891 16.6217 1.05664 17.084C1.5319 17.5527 2.24154 17.7871 3.18555 17.7871ZM3.06836 16.4395C2.62565 16.4395 2.28711 16.3223 2.05273 16.0879C1.82487 15.86 1.71094 15.5182 1.71094 15.0625V6.46875C1.71094 6.00651 1.82487 5.66146 2.05273 5.43359C2.28711 5.19922 2.62565 5.08203 3.06836 5.08203H15.9883C16.4245 5.08203 16.763 5.19922 17.0039 5.43359C17.2448 5.66146 17.3652 6.00651 17.3652 6.46875V15.0625C17.3652 15.5182 17.2448 15.86 17.0039 16.0879C16.763 16.3223 16.4245 16.4395 15.9883 16.4395H3.06836ZM7.72656 8.39258H8.26367C8.41992 8.39258 8.52409 8.36654 8.57617 8.31445C8.63477 8.25586 8.66406 8.14844 8.66406 7.99219V7.45508C8.66406 7.29883 8.63477 7.19466 8.57617 7.14258C8.52409 7.09049 8.41992 7.06445 8.26367 7.06445H7.72656C7.57031 7.06445 7.45964 7.09049 7.39453 7.14258C7.33594 7.19466 7.30664 7.29883 7.30664 7.45508V7.99219C7.30664 8.14844 7.33594 8.25586 7.39453 8.31445C7.45964 8.36654 7.57031 8.39258 7.72656 8.39258ZM10.8125 8.39258H11.3594C11.5156 8.39258 11.6198 8.36654 11.6719 8.31445C11.7305 8.25586 11.7598 8.14844 11.7598 7.99219V7.45508C11.7598 7.29883 11.7305 7.19466 11.6719 7.14258C11.6198 7.09049 11.5156 7.06445 11.3594 7.06445H10.8125C10.6562 7.06445 10.5488 7.09049 10.4902 7.14258C10.4382 7.19466 10.4121 7.29883 10.4121 7.45508V7.99219C10.4121 8.14844 10.4382 8.25586 10.4902 8.31445C10.5488 8.36654 10.6562 8.39258 10.8125 8.39258ZM13.8984 8.39258H14.4453C14.6016 8.39258 14.709 8.36654 14.7676 8.31445C14.8262 8.25586 14.8555 8.14844 14.8555 7.99219V7.45508C14.8555 7.29883 14.8262 7.19466 14.7676 7.14258C14.709 7.09049 14.6016 7.06445 14.4453 7.06445H13.8984C13.7487 7.06445 13.6445 7.09049 13.5859 7.14258C13.5273 7.19466 13.498 7.29883 13.498 7.45508V7.99219C13.498 8.14844 13.5273 8.25586 13.5859 8.31445C13.6445 8.36654 13.7487 8.39258 13.8984 8.39258ZM4.62109 11.4395H5.16797C5.32422 11.4395 5.43164 11.4102 5.49023 11.3516C5.54883 11.293 5.57812 11.1888 5.57812 11.0391V10.4922C5.57812 10.3424 5.54883 10.2415 5.49023 10.1895C5.43164 10.1309 5.32422 10.1016 5.16797 10.1016H4.62109C4.47135 10.1016 4.36719 10.1309 4.30859 10.1895C4.25 10.2415 4.2207 10.3424 4.2207 10.4922V11.0391C4.2207 11.1888 4.25 11.293 4.30859 11.3516C4.36719 11.4102 4.47135 11.4395 4.62109 11.4395ZM7.72656 11.4395H8.26367C8.41992 11.4395 8.52409 11.4102 8.57617 11.3516C8.63477 11.293 8.66406 11.1888 8.66406 11.0391V10.4922C8.66406 10.3424 8.63477 10.2415 8.57617 10.1895C8.52409 10.1309 8.41992 10.1016 8.26367 10.1016H7.72656C7.57031 10.1016 7.45964 10.1309 7.39453 10.1895C7.33594 10.2415 7.30664 10.3424 7.30664 10.4922V11.0391C7.30664 11.1888 7.33594 11.293 7.39453 11.3516C7.45964 11.4102 7.57031 11.4395 7.72656 11.4395ZM10.8125 11.4395H11.3594C11.5156 11.4395 11.6198 11.4102 11.6719 11.3516C11.7305 11.293 11.7598 11.1888 11.7598 11.0391V10.4922C11.7598 10.3424 11.7305 10.2415 11.6719 10.1895C11.6198 10.1309 11.5156 10.1016 11.3594 10.1016H10.8125C10.6562 10.1016 10.5488 10.1309 10.4902 10.1895C10.4382 10.2415 10.4121 10.3424 10.4121 10.4922V11.0391C10.4121 11.1888 10.4382 11.293 10.4902 11.3516C10.5488 11.4102 10.6562 11.4395 10.8125 11.4395ZM13.8984 11.4395H14.4453C14.6016 11.4395 14.709 11.4102 14.7676 11.3516C14.8262 11.293 14.8555 11.1888 14.8555 11.0391V10.4922C14.8555 10.3424 14.8262 10.2415 14.7676 10.1895C14.709 10.1309 14.6016 10.1016 14.4453 10.1016H13.8984C13.7487 10.1016 13.6445 10.1309 13.5859 10.1895C13.5273 10.2415 13.498 10.3424 13.498 10.4922V11.0391C13.498 11.1888 13.5273 11.293 13.5859 11.3516C13.6445 11.4102 13.7487 11.4395 13.8984 11.4395ZM4.62109 14.4766H5.16797C5.32422 14.4766 5.43164 14.4505 5.49023 14.3984C5.54883 14.3464 5.57812 14.2422 5.57812 14.0859V13.5488C5.57812 13.3926 5.54883 13.2884 5.49023 13.2363C5.43164 13.1777 5.32422 13.1484 5.16797 13.1484H4.62109C4.47135 13.1484 4.36719 13.1777 4.30859 13.2363C4.25 13.2884 4.2207 13.3926 4.2207 13.5488V14.0859C4.2207 14.2422 4.25 14.3464 4.30859 14.3984C4.36719 14.4505 4.47135 14.4766 4.62109 14.4766ZM7.72656 14.4766H8.26367C8.41992 14.4766 8.52409 14.4505 8.57617 14.3984C8.63477 14.3464 8.66406 14.2422 8.66406 14.0859V13.5488C8.66406 13.3926 8.63477 13.2884 8.57617 13.2363C8.52409 13.1777 8.41992 13.1484 8.26367 13.1484H7.72656C7.57031 13.1484 7.45964 13.1777 7.39453 13.2363C7.33594 13.2884 7.30664 13.3926 7.30664 13.5488V14.0859C7.30664 14.2422 7.33594 14.3464 7.39453 14.3984C7.45964 14.4505 7.57031 14.4766 7.72656 14.4766ZM10.8125 14.4766H11.3594C11.5156 14.4766 11.6198 14.4505 11.6719 14.3984C11.7305 14.3464 11.7598 14.2422 11.7598 14.0859V13.5488C11.7598 13.3926 11.7305 13.2884 11.6719 13.2363C11.6198 13.1777 11.5156 13.1484 11.3594 13.1484H10.8125C10.6562 13.1484 10.5488 13.1777 10.4902 13.2363C10.4382 13.2884 10.4121 13.3926 10.4121 13.5488V14.0859C10.4121 14.2422 10.4382 14.3464 10.4902 14.3984C10.5488 14.4505 10.6562 14.4766 10.8125 14.4766Z" />
+                        </svg>
+                    </button>
+                    <button class="journey__form-button" id="open-search" data-disabled="true">
+                        <span>SEARCH</span>
+                        <svg class="search" width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.916016 7.55566C0.916016 8.51074 1.09473 9.41016 1.45215 10.2539C1.81543 11.0918 2.31348 11.8301 2.94629 12.4688C3.58496 13.1074 4.32324 13.6084 5.16113 13.9717C6.00488 14.3291 6.9043 14.5078 7.85938 14.5078C8.51562 14.5078 9.14258 14.4199 9.74023 14.2441C10.3379 14.0625 10.8916 13.8105 11.4014 13.4883L14.8555 16.9512C15.0078 17.0977 15.1807 17.2061 15.374 17.2764C15.5732 17.3525 15.7783 17.3906 15.9893 17.3906C16.2939 17.3906 16.5635 17.3203 16.7979 17.1797C17.0322 17.0449 17.2168 16.8574 17.3516 16.6172C17.4922 16.3828 17.5625 16.1133 17.5625 15.8086C17.5625 15.6094 17.5244 15.4131 17.4482 15.2197C17.3721 15.0264 17.2607 14.8506 17.1143 14.6924L13.6865 11.2734C14.0439 10.7402 14.3193 10.1602 14.5127 9.5332C14.7119 8.90039 14.8115 8.24121 14.8115 7.55566C14.8115 6.59473 14.6299 5.69531 14.2666 4.85742C13.9092 4.01367 13.4111 3.27539 12.7725 2.64258C12.1396 2.00391 11.4014 1.50586 10.5576 1.14844C9.71973 0.785156 8.82031 0.603516 7.85938 0.603516C6.9043 0.603516 6.00488 0.785156 5.16113 1.14844C4.32324 1.50586 3.58496 2.00391 2.94629 2.64258C2.31348 3.27539 1.81543 4.01367 1.45215 4.85742C1.09473 5.69531 0.916016 6.59473 0.916016 7.55566ZM3.13965 7.55566C3.13965 6.89941 3.2627 6.28711 3.50879 5.71875C3.75488 5.15039 4.09473 4.64941 4.52832 4.21582C4.96191 3.78223 5.46289 3.44531 6.03125 3.20508C6.59961 2.95898 7.20898 2.83594 7.85938 2.83594C8.50977 2.83594 9.11914 2.95898 9.6875 3.20508C10.2617 3.44531 10.7627 3.78223 11.1904 4.21582C11.624 4.64941 11.9639 5.15039 12.21 5.71875C12.4561 6.28711 12.5791 6.89941 12.5791 7.55566C12.5791 8.20605 12.4561 8.81836 12.21 9.39258C11.9639 9.96094 11.624 10.4619 11.1904 10.8955C10.7627 11.3232 10.2617 11.6602 9.6875 11.9062C9.11914 12.1465 8.50977 12.2666 7.85938 12.2666C7.20898 12.2666 6.59961 12.1465 6.03125 11.9062C5.46289 11.6602 4.96191 11.3232 4.52832 10.8955C4.09473 10.4619 3.75488 9.96094 3.50879 9.39258C3.2627 8.81836 3.13965 8.20605 3.13965 7.55566Z" />
+                        </svg>
+                        <svg class="clear" width="17" height="17" viewBox="0 0 17 17" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.3252 11.0293C16.3252 9.875 16.0791 8.8584 15.5869 7.97949C15.0947 7.10059 14.3916 6.41504 13.4775 5.92285C12.5693 5.4248 11.4883 5.17578 10.2344 5.17578H5.46191L2.36816 5.31641L2.77246 5.92285L4.88184 4.18262L6.65723 2.44238C6.76855 2.33691 6.85645 2.21973 6.9209 2.09082C6.98535 1.96191 7.01758 1.80957 7.01758 1.63379C7.01758 1.32324 6.91504 1.06543 6.70996 0.860352C6.51074 0.649414 6.24414 0.543945 5.91016 0.543945C5.59961 0.543945 5.32715 0.661133 5.09277 0.895508L0.460938 5.47461C0.349609 5.58594 0.264648 5.71484 0.206055 5.86133C0.147461 6.00781 0.118164 6.15723 0.118164 6.30957C0.118164 6.46777 0.147461 6.62305 0.206055 6.77539C0.264648 6.92188 0.349609 7.04785 0.460938 7.15332L5.09277 11.7236C5.32715 11.958 5.59961 12.0752 5.91016 12.0752C6.24414 12.0752 6.51074 11.9727 6.70996 11.7676C6.91504 11.5625 7.01758 11.3018 7.01758 10.9854C7.01758 10.8154 6.98535 10.666 6.9209 10.5371C6.85645 10.4023 6.76855 10.2822 6.65723 10.1768L4.88184 8.44531L2.77246 6.70508L2.36816 7.31152L5.46191 7.45215H10.1904C11.0049 7.45215 11.7021 7.60156 12.2822 7.90039C12.8682 8.19922 13.3164 8.61523 13.627 9.14844C13.9375 9.67578 14.0928 10.2852 14.0928 10.9766C14.0928 11.668 13.9375 12.2803 13.627 12.8135C13.3164 13.3467 12.8682 13.7656 12.2822 14.0703C11.7021 14.375 11.0049 14.5273 10.1904 14.5273H8.22168C7.8877 14.5273 7.60938 14.6387 7.38672 14.8613C7.16992 15.084 7.06152 15.3535 7.06152 15.6699C7.06152 15.9805 7.16992 16.2471 7.38672 16.4697C7.60938 16.6924 7.8877 16.8037 8.22168 16.8037H10.3135C11.5498 16.8037 12.6162 16.5664 13.5127 16.0918C14.415 15.6172 15.1094 14.9463 15.5957 14.0791C16.082 13.2119 16.3252 12.1953 16.3252 11.0293Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="journey__image">
+            <img src="img/plain/banner.png" alt="">
+        </div>
+
+    </section>
+
+    <section class="exclusive">
+        <div class="exclusive__container">
+            <div class="exclusive__body">
+                <div class="exclusive__top container">
+                    <h2 class="_red-title">exclusive custom journey</h2>
+                    <div class="exclusive__text">
+                        Qui ducimus qui omnis suscipit. Iure facilis iusto veritatis commodi quo iusto qui rerum.
+                        Voluptates dolorum nihil in
+                        quis repellendus non ut ipsa. Maiores deserunt fuga ipsam.
+                        <a href="">contact@twid.com</a>
+                    </div>
+                </div>
+                <div class="exclusive__image-container">
+                    <img src="img/plain/custom-journey.png" alt="" class="exclusive__image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news _has-bigest-noise">
+        <div class="news__container container">
+            <div class="news__body">
+                <h1 class="_red-title">NEW iteneraries are coming</h1>
+                <p class="news__description">We are going to launch thise astonishing iteneraries as soon as all
+                    the preps will be finished</p>
+                <div class="news__posts">
+                    <article class="post">
+                        <div class="post__content">
+                            <h3 class="_to-orange-color"><a href="">FRANCE. Bordeaux</a></h3>
+                            <p>Nihil recusandae id reiciendis. Reiciendis velit nobis voluptates quas ullam porro
+                                libero. Est necessitatibus assumenda
+                                ut. Debitis deserunt non ullam est cupiditate. Necessitatibus assumenda ut. Vino
+                                veritas
+                                velit nobis voluptates quas
+                                ullam porro libero.</p>
+                            <time>October, 2022</time>
+                        </div>
+                        <a href="" class="post__image">
+                            <img src="img/posts/france-bordeaux.png" alt="">
+                        </a>
+                    </article>
+                    <article class="post">
+                        <div class="post__content">
+                            <h3 class="_to-orange-color"><a href="">FRANCE. Champagne</a></h3>
+                            <p>Nihil recusandae id reiciendis. Reiciendis velit nobis voluptates quas ullam porro
+                                libero. Est necessitatibus assumenda
+                                ut. Debitis deserunt non ullam est cupiditate. Necessitatibus assumenda ut. Vino
+                                veritas
+                                velit nobis voluptates quas
+                                ullam porro libero.</p>
+                            <time>November, 2022</time>
+                        </div>
+                        <a href="" class="post__image">
+                            <img src="img/posts/france-champagne.png" alt="">
+                        </a>
+                    </article>
+                    <article class="post">
+                        <div class="post__content">
+                            <h3 class="_to-orange-color"><a href="">swiss. Zűrichsee</a></h3>
+                            <p>Nihil recusandae id reiciendis. Reiciendis velit nobis voluptates quas ullam porro
+                                libero. Est necessitatibus assumenda
+                                ut. Debitis deserunt non ullam est cupiditate. Necessitatibus assumenda ut. Vino
+                                veritas
+                                velit nobis voluptates quas
+                                ullam porro libero.</p>
+                            <time>January, 2023</time>
+                        </div>
+                        <a href="" class="post__image">
+                            <img src="img/posts/swiss-zurichsee.png" alt="">
+                        </a>
+                    </article>
+                    <article class="post">
+                        <div class="post__content">
+                            <h3 class="_to-orange-color"><a href="">the netherlands. Vlaams brabant</a></h3>
+                            <p>Nihil recusandae id reiciendis. Reiciendis velit nobis voluptates quas ullam porro
+                                libero. Est necessitatibus assumenda
+                                ut. Debitis deserunt non ullam est cupiditate. Necessitatibus assumenda ut. Vino
+                                veritas
+                                velit nobis voluptates quas
+                                ullam porro libero.</p>
+                            <time>March, 2023</time>
+                        </div>
+                        <a href="" class="post__image">
+                            <img src="img/posts/netherlands.png" alt="">
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div class="form__popup">
+    <div data-id="open-countries" class="form__popup-item item-form">
+        <div class="item-form__body">
+            <button class="item-form__close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="item-form__select">
+                <div class="item-form__select-top">
+                    <div class="item-form__countries item-form__type">
+                        <div class="form__popup-country item-form__type-item">
+                            <button data-open="false"
+                                class="form__popup-country-title type__item-title">PORTUGAL</button>
+                            <div class="form__popup-country-body type__item-body">
+                                <ol>
+                                    <li class="country-itinerary item-hover" data-id="portugal-1">
+                                        <input hidden type="checkbox" name="form-country-item" id="portugal-1">
+                                        <label class="_to-red-color" for="portugal-1">Cabo da Roca — Nazare
+                                            <span>Two days itenerary</span>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-country-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-country item-form__type-item">
+                            <button data-open="false"
+                                class="form__popup-country-title type__item-title">germany</button>
+                            <div class="form__popup-country-body type__item-body">
+                                <ol>
+                                    <li class="country-itinerary item-hover" data-id="germany-1">
+                                        <input hidden type="checkbox" name="form-country-item" id="germany-1">
+                                        <label class="_to-red-color" for="germany-1">Автобаны и самые красивые
+                                            дороги Германии
+                                            <span>Two days itenerary</span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="germany-2">
+                                        <input hidden type="checkbox" name="form-country-item" id="germany-2">
+                                        <label class="_to-red-color" for="germany-2">Oткрыточные виды и лучшие
+                                            дороги Германии
+                                            <span>Three days itenerary</span>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-country-all  form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-country item-form__type-item">
+                            <button data-open="false" class="form__popup-country-title type__item-title">italy</button>
+                            <div class="form__popup-country-body type__item-body">
+                                <ol>
+                                    <li class="country-itinerary item-hover" data-id="italy-1">
+                                        <input hidden type="checkbox" name="form-country-item" id="italy-1">
+                                        <label class="_to-red-color" for="italy-1">Тоскана 1
+                                            <span>Three days itenerary</span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="italy-2">
+                                        <input hidden type="checkbox" name="form-country-item" id="italy-2">
+                                        <label class="_to-red-color" for="italy-2">Тоскана 2
+                                            <span>Four days itenerary</span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="italy-3">
+                                        <input hidden type="checkbox" name="form-country-item" id="italy-3">
+                                        <label class="_to-red-color" for="italy-3">Тоскана 3
+                                            <span>Seven days itenerary</span>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-country-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-country item-form__type-item">
+                            <button data-open="false" class="form__popup-country-title type__item-title">spain</button>
+                            <div class="form__popup-country-body type__item-body">
+                                <ol>
+                                    <li class="country-itinerary item-hover" data-id="spain-1">
+                                        <input hidden type="checkbox" name="form-country-item" id="spain-1">
+                                        <label class="_to-red-color" for="spain-1">Монсерат
+                                            <span>Three days itenerary</span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="spain-2">
+                                        <input hidden type="checkbox" name="form-country-item" id="spain-2">
+                                        <label class="_to-red-color" for="spain-2">Пиренеи
+                                            <span>Three days itenerary</span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="spain-3">
+                                        <input hidden type="checkbox" name="form-country-item" id="spain-3">
+                                        <label class="_to-red-color" for="spain-3">Big Spain journey
+                                            <span>Five days Itenerary. <strong>(Combo of two
+                                                    iteneraries)</strong></span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="spain-4">
+                                        <input hidden type="checkbox" name="form-country-item" id="spain-3">
+                                        <label class="_to-red-color" for="spain-3">Big Spain journey
+                                            <span>Five days Itenerary. <strong>(Combo of two
+                                                    iteneraries)</strong></span>
+                                        </label>
+                                    </li>
+                                    <li class="country-itinerary item-hover" data-id="spain-5">
+                                        <input hidden type="checkbox" name="form-country-item" id="spain-3">
+                                        <label class="_to-red-color" for="spain-3">Big Spain journey
+                                            <span>Five days Itenerary. <strong>(Combo of two
+                                                    iteneraries)</strong></span>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-country-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-form__select-bottom _metal">
+                    <span>choose</span>
+                    <span>a country</span>
+                </div>
+            </div>
+            <div class="item-form__content">
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="portugal-1">
+                    <h5 class="_metal">Cabo da Roca</h5>
+                    <label>portugal</label>
+                    <p>Quas voluptatibus pariatur temporibus cum vel id quia. Consequuntur qui non deserunt
+                        blanditiis nobis et possimus eaque
+                        debitis. Dolorem nesciunt sint animi corrupti maxime illum dolor.</p>
+                    <img src="img/countries/form/cabo-da-roca.png" alt="">
+                </div>
+                <div class="item-form__info country-itinerary__info" data-id="germany-2">
+                    <h5 class="_metal">мюнхен</h5>
+                    <label>germany</label>
+                    <p>Quas voluptatibus pariatur temporibus cum vel id quia. Consequuntur qui non deserunt
+                        blanditiis nobis et possimus eaque
+                        debitis. Dolorem nesciunt sint animi corrupti maxime illum dolor.</p>
+                    <img src="img/countries/form/cabo-da-roca.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-id="open-cars" class="form__popup-item item-form">
+        <div class="item-form__body">
+            <button class="item-form__close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="item-form__select">
+                <div class="item-form__select-top">
+                    <div class="item-form__cars item-form__type">
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">abarth</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="abarth-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="abarth-1">
+                                        <label class="_to-red-color" for="abarth-1">
+                                            <span>124 Spider</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">alfa
+                                romeo</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="alfa-romeo-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="alfa-romeo-1">
+                                        <label class="_to-red-color" for="alfa-romeo-1">
+                                            <span>Giulia Quadrifoglio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="alfa-romeo-2">
+                                        <input hidden type="checkbox" name="form-car-item" id="alfa-romeo-2">
+                                        <label class="_to-red-color" for="alfa-romeo-2">
+                                            <span>Giulia Quadrifoglio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">porsche</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="porsche-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-1">
+                                        <label class="_to-red-color" for="porsche-1">
+                                            <span>Taycan</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-2">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-2">
+                                        <label class="_to-red-color" for="porsche-2">
+                                            <span>Cayman</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-3">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-3">
+                                        <label class="_to-red-color" for="porsche-3">
+                                            <span>Cayman S</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-4">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-4">
+                                        <label class="_to-red-color" for="porsche-4">
+                                            <span>Cayman GT4</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-5">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-5">
+                                        <label class="_to-red-color" for="porsche-5">
+                                            <span>Cayman GT RS</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-6">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-6">
+                                        <label class="_to-red-color" for="porsche-6">
+                                            <span>911 Carrera</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-7">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-7">
+                                        <label class="_to-red-color" for="porsche-7">
+                                            <span>911 Carrera Cabrio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-8">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-8">
+                                        <label class="_to-red-color" for="porsche-8">
+                                            <span>911 Carrera GTS</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="porsche-9">
+                                        <input hidden type="checkbox" name="form-car-item" id="porsche-9">
+                                        <label class="_to-red-color" for="porsche-9">
+                                            <span>911 GT3</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">Alpine</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="alpine-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="alpine-1">
+                                        <label class="_to-red-color" for="alpine-1">
+                                            <span>A1110</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">bmw</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="bmw-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="bmw-1">
+                                        <label class="_to-red-color" for="bmw-1">
+                                            <span>M2 completion</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="bmw-2">
+                                        <input hidden type="checkbox" name="form-car-item" id="bmw-2">
+                                        <label class="_to-red-color" for="bmw-2">
+                                            <span>M240i 2022</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="bmw-3">
+                                        <input hidden type="checkbox" name="form-car-item" id="bmw-3">
+                                        <label class="_to-red-color" for="bmw-3">
+                                            <span>M4 completion</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="bmw-4">
+                                        <input hidden type="checkbox" name="form-car-item" id="bmw-4">
+                                        <label class="_to-red-color" for="bmw-4">
+                                            <span>M4 cabrio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="bmw-5">
+                                        <input hidden type="checkbox" name="form-car-item" id="bmw-5">
+                                        <label class="_to-red-color" for="bmw-5">
+                                            <span>M5</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">ferrari</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="ferrari-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="ferrari-1">
+                                        <label class="_to-red-color" for="ferrari-1">
+                                            <span>F8</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">ford</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="ford-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="ford-1">
+                                        <label class="_to-red-color" for="ford-1">
+                                            <span>Fiesta ST</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">mini
+                                cooper</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="mini-cooper-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="mini-cooper-1">
+                                        <label class="_to-red-color" for="mini-cooper-1">
+                                            <span>Cabrio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="mini-cooper-2">
+                                        <input hidden type="checkbox" name="form-car-item" id="mini-cooper-2">
+                                        <label class="_to-red-color" for="mini-cooper-2">
+                                            <span>JCW</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">mazda</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="mazda-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="mazda-1">
+                                        <label class="_to-red-color" for="mazda-1">
+                                            <span>MX-5</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">mini
+                                cooper</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="mini-cooper-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="mini-cooper-1">
+                                        <label class="_to-red-color" for="mini-cooper-1">
+                                            <span>Cabrio</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                    <li class="item-hover" data-id="mini-cooper-2">
+                                        <input hidden type="checkbox" name="form-car-item" id="mini-cooper-2">
+                                        <label class="_to-red-color" for="mini-cooper-2">
+                                            <span>JCW</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                        <div class="form__popup-car  item-form__type-item">
+                            <button data-open="false" class="form__popup-car-title type__item-title">volkswagen</button>
+                            <div class="form__popup-car-body type__item-body">
+                                <ol>
+                                    <li class="item-hover" data-id="volkswagen-1">
+                                        <input hidden type="checkbox" name="form-car-item" id="volkswagen-1">
+                                        <label class="_to-red-color" for="volkswagen-1">
+                                            <span>Golf GTI 8</span>
+                                            <div class="">
+                                                <img src="img/countries/flags/italy.png" alt="">
+                                                <img src="img/countries/flags/portugal.png" alt="">
+                                                <img src="img/countries/flags/germany.png" alt="">
+                                                <img src="img/countries/flags/spain.png" alt="">
+                                            </div>
+                                        </label>
+                                    </li>
+                                </ol>
+                                <button data-all="false"
+                                    class="form__popup-car-all form__popup-item-all _to-red-color">Check
+                                    all</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-form__select-bottom _metal">
+                    <span>choose</span>
+                    <span>a car</span>
+                </div>
+            </div>
+            <div class="item-form__content">
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="abarth-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/porsche/Carrera.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="ferrari-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/ferrari/f8.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="alpine-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/alpine/alpine-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="alfa-romeo-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/alpha-romeo/alfaromeo-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="bmw-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/bmw/bmw-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="audi-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/audi/audi-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="fiat-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/fiat/fiat-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+                <div class="item-form__info country-itinerary__info item-hover__info" data-id="porsche-1">
+                    <h5 class="_metal">porsche</h5>
+                    <label>911 carrera cabrio</label>
+                    <p>The Porsche 911 has 2 Petrol Engine on offer. It is available with Manual & Automatic
+                        transmission. The 911 is a 4
+                        seater 6 cylinder car and has length of 4519 mm, width of 1852 mm and a wheelbase of
+                        2450 mm.</p>
+                    <img src="img/cars/porsche/porsche-mark.png" alt="">
+                    <ol>
+                        <li><strong>Fuel Type</strong> <span>Petrol</span></li>
+                        <li><strong>Max Power (bhp@rpm)</strong> <span>641.00bhp@6500</span></li>
+                        <li><strong>Seating Capacity</strong> <span>2, 4</span></li>
+                        <li><strong>Transmission Type</strong> <span>Automatic</span></li>
+                        <li><strong>Tank Capacity</strong> <span>64.0</span></li>
+                        <li><strong>Body Type</strong> <span>Coupe</span></li>
+                        <li><strong>Ground Clearance Unladen</strong> <span>109</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-id="open-calendar" class="form__popup-item item-form">
+        <div class="item-form__body">
+            <button class="item-form__close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="form__popup-calendar">
+                <div class="calendar">
+                    <div class="calendar__body">
+
+                    </div>
+                </div>
+                <div class="calendar__slider-controll">
+                    <div class="calendar__slider-prev">
+                        <img src="img/svg/journey-slider-arrow.svg" alt="">
+                    </div>
+                    <div class="calendar__slider-next _hide">
+                        <img src="img/svg/journey-slider-arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="calendar__slider-pagination _slider-pagination"></div>
+            </div>
+            <div class=" calendar__bottom _metal">
+                <span>choose your dates</span>
+            </div>
+            <div class="calendar__massage">
+                <span><label>!</label> Sorry, but we can not provide orders on these days for technical
+                    reasons.</span>
+            </div>
+        </div>
+    </div>
+
+    <div data-id="open-search" class="form__popup-item item-form">
+        <div class="item-form__body search__form-body">
+            <button class="item-form__close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="search__top">
+                <div class="swiper">
+                    <ol class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <label for="Cabo da Roca — Nazare. Portugal" class="bold">
+                                <img class="itenerary-map" src="img/countries/maps/portugal.svg" alt="" hidden>
+                                <input class="final-itenerary-input" id="Cabo da Roca — Nazare. Portugal" type="radio"
+                                    data-descr="Three days journey with two nights. Hotel “Belmond”."
+                                    name="final-itinerary" hidden>
+                                <span class="bold">Cabo da Roca — Nazare. Portugal</span>
+                                <button class="open__cars-popup">Choose a car</button>
+                            </label>
+                        </li>
+                        <li class="swiper-slide">
+                            <label for="Ocean and best view roads. Portugal" class="bold">
+                                <img class="itenerary-map" src="img/countries/maps/portugal.svg" alt="" hidden>
+                                <input class="final-itenerary-input" id="Ocean and best view roads. Portugal"
+                                    data-descr="Three days journey with two nights. Hotel “Belmond”." type="radio"
+                                    name="final-itinerary" hidden>
+                                <span class="bold">Ocean and best view roads. Portugal</span>
+                                <button class="open__cars-popup">Choose a car</button>
+                            </label>
+                        </li>
+                        <li class="swiper-slide">
+                            <label for="Big Portugal Journey" class="bold">
+                                <img class="itenerary-map" src="img/countries/maps/germany.svg" alt="" hidden>
+                                <input class="final-itenerary-input" id="Big Portugal Journey" type="radio"
+                                    data-descr="Three days journey with two nights. Hotel “Belmond”."
+                                    name="final-itinerary" hidden>
+                                <span class="bold">Big Portugal Journey</span>
+                                <button class="open__cars-popup">Choose a car</button>
+                            </label>
+                        </li>
+                        <li class="swiper-slide">
+                            <label for="Postcard views and best autobans. Germany" class="bold">
+                                <img class="itenerary-map" src="img/countries/maps/italy.svg" alt="" hidden>
+                                <input class="final-itenerary-input" id="Postcard views and best autobans. Germany"
+                                    type="radio" data-descr="Three days journey with two nights. Hotel “Belmond”."
+                                    name="final-itinerary" hidden>
+                                <span class="bold">Postcard views and best autobans. Germany</span>
+                                <button class="open__cars-popup">Choose a car</button>
+                            </label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="search__calendar">
+                <div class="calendar">
+                    <div class="calendar__body">
+
+                    </div>
+                </div>
+                <div class="calendar__slider-controll">
+                    <div class="calendar__slider-prev">
+                        <img src="img/svg/journey-slider-arrow.svg" alt="">
+                    </div>
+                    <div class="calendar__slider-next _hide">
+                        <img src="img/svg/journey-slider-arrow.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="search__bottom">
+                <div class="search__bottom-movement">
+                    <span class="bold" id="final-itenerary">
+                        <hr>
+                    </span>
+                    <ol>
+                        <li>
+                            <img src="img/svg/form-car.svg" alt="">
+                            <span id="final-car">
+                                <hr>
+                            </span>
+                        </li>
+                        <li>
+                            <img src="img/svg/form-date.svg" alt="">
+                            <span id="final-date">
+                                <hr>
+                            </span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="search__bottom-price">
+                    <ol>
+                        <li>
+                            <label class="bold">Price: </label>
+                            <div class="bold">
+                                <span id="total-price">
+                                    <hr>
+                                </span> €
+                            </div>
+                        </li>
+                        <li>
+                            <label>PRE-ORDER PRICE: </label>
+                            <div> <span id="preorder-price">
+                                    <hr>
+                                </span> €</div>
+                        </li>
+                    </ol>
+                    <span></span>
+                </div>
+                <button class="add-to-cart" disabled data-status="0">
+                    <span>add to cart</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="basket__popup">
+    <div class="basket__popup-overlay"></div>
+    <div class="basket__popup-body">
+        <div class="basket__popup-content">
+            <button class="basket__popup-close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="basket__popup-info">
+                <div class="basket__popup-info-movement">
+                    <span class="bold" id="basket-itenerary"></span>
+                    <label id="basket-itenerary-description"></label>
+                </div>
+                <div class="basket__popup-info-data">
+                    <ol>
+                        <li>
+                            <span id="basket-date"></span>
+                        </li>
+                    </ol>
+                </div>
+                <div class="basket__popup-info-car">
+                    <ol>
+                        <li>
+                            <span id="basket-car"></span>
+                            <label id="basket-car-mark"></label>
+                        </li>
+                    </ol>
+                </div>
+                <div class="basket__popup-info-price">
+                    <button>
+                        <span>buy</span>
+                    </button>
+                    <ol>
+                        <li>
+                            <label class="bold">Price:<span id="basket-total-price"></span> € </label>
+                        </li>
+                        <li>
+                            <label>PRE-ORDER PRICE: <span id="basket-preorder-price"></span> €</label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="basket__popup-map"></div>
+        </div>
+    </div>
+</div>
+
+<div class="cars__popup">
+    <div class="cars__popup-overlay"></div>
+    <div class="cars__popup-body">
+        <div class="cars__popup-content">
+            <h5>cars acceptable on the tour</h5>
+            <button class="cars__popup-close">
+                <img src="img/svg/close-btn.svg" alt="">
+            </button>
+            <div class="cars__popup-grid">
+
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 124 Spider"
+                        data-mark="95 PS / 5-seats" hidden data-price="1500" data-preorder="150">
+                    <label for="ABARTH 124 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>124 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 125 Spider"
+                        data-mark="96 PS / 6-seats" hidden data-price="2000" data-preorder="200">
+                    <label for="ABARTH 125 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>125 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 126 Spider"
+                        data-mark="97 PS / 7-seats" hidden data-price="2500" data-preorder="250">
+                    <label for="ABARTH 126 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>126 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 127 Spider"
+                        data-mark="98 PS / 8-seats" hidden data-price="3000" data-preorder="300">
+                    <label for="ABARTH 127 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>127 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 128 Spider"
+                        data-mark="100 PS / 10-seats" hidden data-price="3500" data-preorder="350">
+                    <label for="ABARTH 128 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>128 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 129 Spider"
+                        data-mark="101 PS / 11-seats" hidden data-price="4000" data-preorder="400">
+                    <label for="ABARTH 129 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>129 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+                <article class="auto__cart">
+                    <input type="checkbox" class="auto__cart-checkbox" id="ABARTH 130 Spider"
+                        data-mark="102 PS / 12-seats" hidden data-price="4500" data-preorder="450">
+                    <label for="ABARTH 130 Spider">
+                        <div class="auto__cart-content">
+                            <h4>ABARTH <span>130 Spider</span></h4>
+                            <p>95 PS / 5-seats</p>
+                            <img src="img/cars/abarth/124-spider.png" alt="">
+                        </div>
+                    </label>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@@include('html/footer-over.html')
+@@include('html/footer.html')

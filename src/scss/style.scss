@@ -1,0 +1,53 @@
+// null default styles
+@import "null";
+
+// load variables
+@import "variables";
+
+// load mixins
+@import "mixins";
+
+// load fonts
+@import "fonts";
+
+// load swiper
+@import "../../node_modules/swiper/swiper";
+
+// load common styles
+@import "common";
+
+
+// parts
+
+// plane form
+@import "parts/plan-form";
+
+// menu
+@import "parts/menu";
+
+// header
+@import "parts/header";
+
+// footer
+@import "parts/footer";
+
+// home page
+@import "parts/home";
+
+// journey page
+@import "parts/journey-page";
+
+// auto page
+@import "parts/auto";
+
+// country page
+@import "parts/country";
+
+// car page
+@import "parts/car-page";
+
+// register page
+@import "parts/register";
+
+// road page
+@import "parts/road";

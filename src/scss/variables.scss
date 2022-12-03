@@ -1,0 +1,18 @@
+$red: #f4472b;
+$orange: #f58332;
+$mainColor: #002532;
+$blueLight: #295b74;
+$lightGray: #d9dcde;
+$darkGray: #a5aaad;
+
+$container: 1180;
+$containerPaddingDesktop: 50;
+$containerMobile: 15;
+$containerWithPadding: $container + ($containerPaddingDesktop * 2) + px;
+
+
+$noteBookWidth: 1200px;
+$laptopWidth: 1024px;
+$mobileWidthMax: 768px;
+$mobileWidthMin: 768px;
+$smallmobileWidth: 540px;

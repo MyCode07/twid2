@@ -1,0 +1,471 @@
+.road {
+    position: relative;
+    height: 100vh;
+
+    // .road__container
+
+    &__container {
+    }
+
+    // .road__body
+
+    &__body {
+    }
+
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // .road__info
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        z-index: 2;
+        padding-top: 150px;
+
+        h1 {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 95px;
+            line-height: 0.68;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        p {
+            margin-left: 4px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 0.6;
+            color: #ffffff;
+        }
+    }
+}
+
+.about {
+    margin-top: 76px;
+    margin-bottom: 90px;
+    // .about__container
+
+    &__container {
+    }
+
+    // .about__body
+
+    &__body {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    // .about__text
+
+    &__text {
+        max-width: 680px;
+        font-family: "Metal";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 1;
+        color: $mainColor;
+    }
+
+    // .about__map
+
+    &__map {
+        img {
+            min-width: 382px;
+            margin-bottom: 11px;
+        }
+        a {
+            display: block;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            color: $mainColor;
+        }
+    }
+}
+
+.road__calendar {
+    padding-bottom: 60px;
+    position: relative;
+
+    &:after {
+        content: "";
+        display: block;
+        background-image: url("@img/noise-middle.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        max-width: $containerWithPadding;
+        height: 90px;
+        margin-top: 60px;
+        margin-inline: auto;
+    }
+
+    // .road__calendar-container
+
+    &-container {
+    }
+
+    // .road__calendar-body
+
+    &-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .road__calendar-left
+
+    &-left {
+        margin-right: 85px;
+    }
+
+    // .road__calendar-left-info
+
+    &-left-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+
+        h3 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $red;
+            margin-right: 30px;
+        }
+
+        span {
+            cursor: pointer;
+            text-decoration: underline;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.29;
+            color: $mainColor;
+            padding-left: 28px;
+            display: block;
+            background-image: url("@img/svg/form-date.svg");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: 19px 25px;
+        }
+    }
+
+    // .road__calendar-calendar
+
+    &-calendar {
+        display: flex;
+
+        & > :not(:last-child) {
+            margin-right: 65px;
+        }
+    }
+
+    // .road__calendar-right
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 380px;
+        width: 100%;
+
+        h4 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $mainColor;
+            margin-bottom: 40px;
+        }
+
+        button {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.71;
+            color: $darkGray;
+            border: 1px solid $mainColor;
+            border-radius: 10px;
+            text-transform: uppercase;
+            padding: 15px 0;
+            width: 180px;
+            align-self: flex-end;
+        }
+    }
+
+    // .road__calendar-right-info
+
+    &-right-info {
+        margin-bottom: 21px;
+
+        h5 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 1.29;
+            text-transform: uppercase;
+            color: $blueLight;
+            margin-bottom: 5px;
+        }
+
+        span {
+            display: block;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.33;
+            color: $red;
+        }
+    }
+
+    #road__calendar-month {
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 29px 0;
+    }
+
+    #road__calendar-cars {
+        padding: 22px 0;
+        border-bottom: 1px solid #000;
+    }
+
+    ol {
+        & :first-child {
+            padding-left: 0 !important;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+
+        & > :not(:last-child) {
+            position: relative;
+
+            &:after {
+                position: absolute;
+                content: "";
+                right: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $blueLight;
+            }
+        }
+
+        li {
+            width: fit-content;
+            padding: 0 10px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.29;
+            text-transform: uppercase;
+            color: $blueLight;
+        }
+    }
+}
+
+.details {
+    @include adaptive-value("padding-bottom", 315, 150, 1);
+
+    // .details__container
+
+    &__container {
+    }
+
+    // .details__body
+
+    &__body {
+    }
+
+    // .details__row
+
+    &__row {
+        margin-top: 120px;
+        position: relative;
+        counter-reset: day;
+
+        h3 {
+            display: block;
+            margin-bottom: 56px;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 0.6;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $red;
+        }
+
+        // .details__row-item
+
+        &-item {
+            margin-bottom: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid $darkGray;
+        }
+    }
+
+    // .details__bottom
+
+    &__bottom {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 0.6;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $red;
+
+        &:after {
+            margin-top: 93px;
+        }
+
+        a,
+        span {
+            color: inherit;
+            line-height: inherit;
+        }
+    }
+}
+
+.grid-item {
+    counter-increment: day;
+
+    // .grid-item__body
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .grid-item__info
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-right: 20px;
+
+        h5 {
+            position: relative;
+            &:after {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 11px;
+                height: 32px;
+                background-image: url("@img/about/flag.png");
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: auto;
+            }
+
+            &:before {
+                content: counter(day) ".";
+                margin: 0 15px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: $red;
+            }
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $mainColor;
+        }
+
+        p {
+            flex: 1 1 auto;
+            margin-top: 20px;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.33;
+            color: $mainColor;
+        }
+
+        span {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            color: $mainColor;
+
+            label {
+                margin-right: 10px;
+
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 1.29;
+                color: $red;
+            }
+        }
+
+        img {
+        }
+    }
+
+    // .grid-item__img
+
+    &__img {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        span {
+            margin: 0;
+        }
+    }
+
+    // .grid-item__image
+
+    &__image {
+        padding-top: 50px;
+        width: 100%;
+        flex: 0 0 681px;
+
+        img {
+            width: 100%;
+            min-height: 482px;
+            object-fit: cover;
+        }
+    }
+}
