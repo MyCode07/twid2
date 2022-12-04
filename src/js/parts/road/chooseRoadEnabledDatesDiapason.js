@@ -1,7 +1,7 @@
-import { addToCartButtonStatus } from "../plan-form.js";
-import { monthNames } from "./monthNames.js";
+import { addToCartButtonStatus } from "../plan-form/plan-form.js";
+import { monthNames } from "../plan-form/utils/monthNames.js";
 
-export function chooseEnabledDatesDiapason(day) {
+export function chooseRoadEnabledDatesDiapason(day) {
     const month = day.closest('.month__grid-days');
     const allDays = [...month.querySelectorAll('span')];
     const index = allDays.indexOf(day)
@@ -22,14 +22,8 @@ export function chooseEnabledDatesDiapason(day) {
         }
         else {
             elem.classList.add('_choosed');
-            addToCartButtonStatus.date = true
         }
     });
-
-    addToCartButtonStatus.status();
-
-
-    const finalDate = document.querySelector('#final-date');
 
     const first = arr[0];
     const last = arr[arr.length - 1];
@@ -45,16 +39,21 @@ export function chooseEnabledDatesDiapason(day) {
     let outputText = '';
     let outputDate = '';
 
+    const outputElem = document.querySelector('#road__calendar-month');
+
     if (arr.length == 1) {
         outputText = `${first.textContent}.${montStarthNum}.${yearStart}`;
-        outputDate = `${monthStartName} ${first.textContent}, ${yearStart}`;
+        outputDate = `<span>${monthStartName} ${first.textContent}, ${yearStart}</span>`;
     }
     else {
         outputText = `${first.textContent}.${montStarthNum}.${yearStart} — ${last.textContent}.${montEndNum}.${yearEnd}`;
-        outputDate = `${monthStartName} ${first.textContent}, ${yearStart} — ${monthEndName} ${last.textContent}, ${yearEnd}`;
+        outputDate = `<span>${monthStartName} ${first.textContent}, ${yearStart} — </span><span>${monthEndName} ${last.textContent}, ${yearEnd}</span>`;
     }
-    finalDate.textContent = outputText;
-    finalDate.dataset.date = outputDate;
+    outputElem.innerHTML = outputDate;
+    outputElem.dataset.date = outputText;
+
+
+
 
 }
 

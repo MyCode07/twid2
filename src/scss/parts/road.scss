@@ -253,13 +253,9 @@
     }
 
     ol {
-        & :first-child {
-            padding-left: 0 !important;
-        }
-
         display: flex;
         flex-wrap: wrap;
-
+        margin-left: -10px;
         & > :not(:last-child) {
             position: relative;
 
@@ -277,7 +273,6 @@
         li {
             width: fit-content;
             padding: 0 10px;
-
             font-style: normal;
             font-weight: 400;
             font-size: 14px;

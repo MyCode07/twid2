@@ -1,9 +1,5 @@
-// слайдер
-
-import { Swiper, Navigation, Pagination, Grid } from 'swiper';
-
 // соновной календарь и календарь маршрутов
-import { Calendar, IteneraryCalendar } from './calendar.js';
+import { Calendar } from './calendar.js';
 
 // создаем слайдер из календаря
 import { setCalendarSlider } from './utils/setCalendarSlider.js';
@@ -12,7 +8,7 @@ import { setCalendarSlider } from './utils/setCalendarSlider.js';
 import { clickOnDay } from './utils/clickOnDay.js';
 
 // количество выбранных маршрутов и машин
-import { getChusedItenerariesAndChoosedCars } from './utils/getChusedItenerariesAndChoosedCars.js';
+import { getChооsedItenerariesAndChoosedCars } from './utils/getChооsedItenerariesAndChoosedCars.js';
 
 // выбранные дни на основном календаре
 import { getChoosedDates, setChoosedDates } from './utils/choosedDates.js';
@@ -29,12 +25,17 @@ import { addToCart } from './utils/addToCart.js';
 // очистит пписк
 import { resetSearch } from './utils/resetSearch.js';
 
+// показываем финальные маршруты
+import { finalIteneraryInput, setFinalItenerearies } from './utils/setFinalIteneraries.js';
 
-// проверка статуса активностикнопки поиска
-const finalChoosedCar = document.querySelector('#final-car');
-const finalChoosedItenerary = document.querySelector('#final-itenerary');
-const totalPrice = document.querySelector('#total-price');
-const preOrderPrice = document.querySelector('#preorder-price');
+// загрузка машин в попап машин для финальных маршрутов
+import { changeCarsInCarspopup } from './utils/changeCarsInCarspopup.js';
+
+// наведение на маршруты и на машины
+import { hoverOnCarsandIteneraries } from './utils/hoverOnCarsandIteneraries.js';
+
+
+// проверка статуса активности кнопки добавления в корзину
 const addtoCartButton = document.querySelector('.add-to-cart');
 export const addToCartButtonStatus = {
     itenerary: false,
@@ -50,6 +51,15 @@ export const addToCartButtonStatus = {
     }
 }
 
+
+// вывод вынальный выборов в посике
+const finalChoosedCar = document.querySelector('#final-car');
+const finalChoosedItenerary = document.querySelector('#final-itenerary');
+const totalPrice = document.querySelector('#total-price');
+const preOrderPrice = document.querySelector('#preorder-price');
+
+
+
 document.addEventListener('DOMContentLoaded', function (e) {
 
     // основной календарь
@@ -60,28 +70,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
         setCalendarSlider('.form__popup-calendar .calendar', calendarBody);
     }
 
-
-    // слайдер маршрутов в поиске
-    const searchTopSlides = document.querySelectorAll('.search__top li');
-    if (searchTopSlides.length) {
-        new Swiper('.search__top .swiper', {
-            slidesPerView: 'auto',
-            spaceBetween: 40,
-        })
-    }
-
     // клики
     const searchButton = document.querySelector('#open-search');
     document.addEventListener('click', (e) => {
         let targetEl = e.target;
 
-        // клик на кнопку выбрать все направления
+        // клик на кнопку 'выбрать все направления'
         if (targetEl.classList.contains('form__popup-item-all')) {
             const country = targetEl.closest('.item-form__type-item');
             let clicked = targetEl.dataset.all;
             let allInput = country.querySelectorAll('input');
 
-            // меняю текст и соосояние кнопки выбрать все направления
+            // меняю текст и соосояние кнопки 'выбрать все направления' в зависимоси от состояния checkbox
             if (clicked == 'false') {
                 targetEl.dataset.all = 'true';
                 targetEl.textContent = 'Reset';
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         }
 
-        // по кликуна название страны открываю список направлений 
+        // по клику на название страны открываю список направлений 
         if (targetEl.classList.contains('type__item-title')) {
             const formItem = targetEl.closest('.item-form');
             const buttons = formItem.querySelectorAll('.type__item-title');
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 }
             });
 
-            // при смене атрибута data-open меняется состояние кнопки страны и выпадатсыцего списка направлений
+            // при смене атрибута data-open меняется состояние кнопки страны и выпадающего списка направлений
             let open = targetEl.dataset.open;
             if (open == 'true') {
                 targetEl.dataset.open = 'false';
@@ -124,26 +124,38 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         // клик на активный день на основном календаре
         if (targetEl.classList.contains('enabled') && targetEl.closest('[data-id="open-calendar"]')) {
+
+            // событие клика
             clickOnDay(targetEl)
+
+            // получение выбранных дат
             getChoosedDates(targetEl);
         }
 
         // основной попап 
         const formPopup = document.querySelector('.form__popup');
 
-        // клик на кнопки открывающие попап
+        // клик на кнопки открывающие соотв. попапы
         if (targetEl.classList.contains('journey__form-button')) {
 
-
+            // активная кнопка при клике
             const activeButton = document.querySelector('.journey__form-button._active')
             if (activeButton) {
-                getChusedItenerariesAndChoosedCars(activeButton);
+
+                // получение количества выбранных маршрутов и машин
+                getChооsedItenerariesAndChoosedCars(activeButton);
+
+                // вывод выбранной даты в кнопку даты
                 setChoosedDates(activeButton)
+
+                // активация кнопки поиска если условия выполнены (см. в функции)
                 activeateSearchButton()
                 activeButton.classList.remove('_active');
             }
 
             const id = targetEl.id;
+
+            // все попапы формы
             const popups = document.querySelectorAll('.item-form');
             popups.forEach(popup => {
 
@@ -152,15 +164,29 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 }
 
                 if (popup.dataset.id == id) {
+
+                    // клик на кнопку открывающий попап поиска
                     if (id == 'open-search') {
+
+                        // если кнопка активна
                         if (!targetEl.hasAttribute('data-disabled')) {
                             formPopup.classList.add('_open');
-                            popup.classList.add('_open')
-                            targetEl.classList.add('_active')
+                            popup.classList.add('_open');
+                            targetEl.classList.add('_active');
+
+                            // загрузка финальных маршрутов по входному парамертру
+                            // setFinalItenerearies('')
+                            setFinalItenerearies(finalIteneraries)
+
+                            // по умолчанию акивный первый элемент финальных маршрутов 
+                            finalIteneraryInput(document.querySelector('.final-itenerary-input:checked'), firstIteneraryEnabledDates);
+
+                            // сброс формы поска
                             resetSearch(targetEl);
                         }
                     }
 
+                    // клики на сотальны кнопки открывающие соотв. попапы
                     else {
                         formPopup.classList.add('_open');
                         popup.classList.add('_open')
@@ -173,6 +199,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
                         else {
                             searchButton.classList.remove('_reset')
                             searchButton.querySelector('span').textContent = 'Search';
+                            if (document.querySelector('[data-id="open-search"]').classList.contains('_empty')) {
+                                document.querySelector('[data-id="open-search"]').classList.remove('_empty')
+                            }
                         }
                     }
                 }
@@ -187,8 +216,14 @@ document.addEventListener('DOMContentLoaded', function (e) {
             formPopup.classList.remove('_open');
             const activeButton = document.querySelector('.journey__form-button._active')
             if (activeButton) {
-                getChusedItenerariesAndChoosedCars(activeButton);
+
+                // получение количества выбранных маршрутов и машин
+                getChооsedItenerariesAndChoosedCars(activeButton);
+
+                // вывод выбранной даты в кнопку даты
                 setChoosedDates(activeButton);
+
+                // активация кнопки поиска если условия выполнены (см. в функции)
                 activeateSearchButton()
                 activeButton.classList.remove('_active');
             }
@@ -198,8 +233,14 @@ document.addEventListener('DOMContentLoaded', function (e) {
             formPopup.classList.remove('_open');
             const activeButton = document.querySelector('.journey__form-button._active')
             if (activeButton) {
-                getChusedItenerariesAndChoosedCars(activeButton);
+
+                // получение количества выбранных маршрутов и машин
+                getChооsedItenerariesAndChoosedCars(activeButton);
+
+                // вывод выбранной даты в кнопку даты
                 setChoosedDates(activeButton);
+
+                // активация кнопки поиска если условия выполнены (см. в функции)
                 activeateSearchButton()
                 activeButton.classList.remove('_active');
             }
@@ -209,19 +250,34 @@ document.addEventListener('DOMContentLoaded', function (e) {
         if (targetEl.classList.contains('open__cars-popup')) {
             const checkbox = targetEl.closest('label').querySelector('input');
             if (checkbox.checked) {
+
+                // загрузка машин для соотв. маршрута (см. в функции)
+                changeCarsInCarspopup(checkbox, finalIteneraries);
                 document.querySelector('.cars__popup').classList.add('_open');
+
+                // но мильках отключем скролл документа
+                if (window.innerWidth <= 768) {
+                    document.body.classList.add('_noscroll')
+                }
             }
         }
 
         // закритие попапа выбора машин конкретного маршрута
         if (targetEl.classList.contains('cars__popup-close') || targetEl.classList.contains('cars__popup-overlay')) {
             document.querySelector('.cars__popup').classList.remove('_open');
+
+            if (document.body.classList.contains('_noscroll')) {
+                document.body.classList.remove('_noscroll')
+            }
         }
 
         // добавление в корзину
         if (targetEl.classList.contains('add-to-cart')) {
+
+            // (см. в функции)
             addToCart();
             document.querySelector('.basket__popup').classList.add('_open');
+            window.scrollTo(0, 0);
         }
 
         // закрытие корзины
@@ -231,14 +287,23 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         // клик на дипазон дней на календаре маршрута
         if (targetEl.classList.contains('diapason') && targetEl.closest('[data-id="open-search"]')) {
+
+            // (см. в функции)
             chooseEnabledDatesDiapason(targetEl);
+        }
+
+        // при пустом поиске клик на кнопку возврата в календарь
+        if (targetEl.classList.contains('back-to-search')) {
+            document.querySelector('[id="open-search"]').classList.remove('_reset')
+            document.querySelector('[id="open-search"]').classList.remove('_active')
+            document.querySelector('[data-id="open-search"]').classList.remove('_empty')
+            document.querySelector('[data-id="open-search"]').classList.remove('_open')
+            document.querySelector('[data-id="open-calendar"]').classList.add('_open')
         }
 
     });
 
-    // запусакем календарь но не вызываем ее создание это будем делать при выборе или изменении маршрута
-    const searchCalendarBody = document.querySelector('.search__calendar .calendar__body');
-    const calendar = new IteneraryCalendar(searchCalendarBody, iteneraryEnabledDates);
+
 
     // инпуты
     document.addEventListener('input', function (e) {
@@ -248,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         if (targetEl.classList.contains('auto__cart-checkbox')) {
             const checkBoxes = document.querySelectorAll('.auto__cart-checkbox:checked');
 
+            // смена содержание соотв. элементов вв зависимост от выбранной машины
             if (checkBoxes.length >= 1) {
                 checkBoxes.forEach(input => {
                     input.checked = false
@@ -255,13 +321,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 targetEl.checked = true
 
                 finalChoosedCar.innerHTML = targetEl.id;
-                finalChoosedCar.dataset.mark = targetEl.dataset.mark;
+                finalChoosedCar.dataset.mark = targetEl.dataset.info;
                 totalPrice.innerHTML = targetEl.dataset.price;
                 preOrderPrice.innerHTML = targetEl.dataset.preorder;
 
                 addToCartButtonStatus.car = true;
             }
-
             else {
                 targetEl.checked = false
 
@@ -273,73 +338,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 addToCartButtonStatus.car = false;
             }
 
+            // проверка статуса кнопки добавления корзины
             addToCartButtonStatus.status();
         }
 
         // выбор маршрута в попапе поиска и смена календаря под этот маршрут
         if (targetEl.classList.contains('final-itenerary-input')) {
-
-            // при выборе нового маршрута обновляем календарь под выбранный маршрут
-            calendar.updateCalendar(iteneraryEnabledDates2);
-            setCalendarSlider('.search__calendar .calendar', searchCalendarBody);
-
-            const map = targetEl.closest('label').querySelector('img.itenerary-map').cloneNode();
-            const existMap = finalChoosedItenerary.closest('.search__bottom-movement').querySelector('img.itenerary-map')
-
-            if (targetEl.checked) {
-                finalChoosedItenerary.innerHTML = targetEl.id;
-                finalChoosedItenerary.dataset.descr = targetEl.dataset.descr;
-
-                if (existMap) {
-                    existMap.remove();
-                }
-                finalChoosedItenerary.after(map)
-
-                addToCartButtonStatus.itenerary = true;
-            }
-
-            else {
-                finalChoosedItenerary.innerHTML = '<hr>';
-                finalChoosedItenerary.dataset.descr = '';
-
-
-                addToCartButtonStatus.itenerary = false;
-            }
-
-            addToCartButtonStatus.status();
+            finalIteneraryInput(targetEl, nextIteneraryEnabledDates);
         }
-
     })
 
     // наведение на маршруты и на машины
-    const itemForms = document.querySelectorAll('.item-form');
-    if (itemForms.length) {
-        itemForms.forEach(item => {
-            const hoverElements = item.querySelectorAll('.item-hover');
-            hoverElements.forEach(el => {
-                const id = el.dataset.id
-
-                // навадение на маршрут показывает соответствующий данному маршруту блок информацию
-                el.addEventListener('mouseenter', function (e) {
-
-                    // проверка идет по классу и атрибуту data-id, data-id должны быть одинаковые для элемента маршрута и ее блока с информацией
-                    const info = document.querySelector(`.item-hover__info[data-id="${id}"]`);
-                    if (info) {
-                        info.setAttribute('data-show', true);
-                    }
-                })
-
-                // когда наведение убрано проверяем на наличе атрибута data-show и если есть убираем
-                el.addEventListener('mouseleave', function (e) {
-
-                    const info = document.querySelector(`.item-hover__info[data-id="${id}"]`);
-                    if (info && info.hasAttribute('data-show')) {
-                        info.removeAttribute('data-show');
-                    }
-                })
-            })
-        })
-    }
+    hoverOnCarsandIteneraries();
 
     // изменение места карты маршрута в каозрине на мобильных устройствах
     const basketItenerary = document.querySelector('.basket__popup-info-movement')
@@ -369,31 +379,6 @@ const allDisabledDates = {
 зависимости от кликов меняются и меняются соответтвенные даты
 НУЖНЫ соотв. даты - т.е. год и месяц этого календаря
 */
-
-// const iteneraryDisabledDates = {
-//     'dates': [
-//         {
-//             'year': 2022,
-//             'month': 11,
-//             'enabledDays': [29, 30]
-//         },
-//         {
-//             'year': 2022,
-//             'month': 12,
-//             'enabledDays': [1, 2, 3, 18, 19, 20, 25]
-//         },
-//         {
-//             'year': 2023,
-//             'month': 1,
-//             'enabledDays': -1
-//         },
-//         {
-//             'year': 2023,
-//             'month': 2,
-//             'enabledDays': 'full'
-//         }
-//     ]
-// }
 
 const iteneraryEnabledDates = {
     'dates': [
@@ -428,7 +413,8 @@ const iteneraryEnabledDates = {
     ]
 }
 
-const iteneraryEnabledDates2 = {
+// по умолчанию активные диапазоны для первого элемнта финальх маршрут
+const firstIteneraryEnabledDates = {
     'dates': [
         {
             'year': 2023,
@@ -437,6 +423,10 @@ const iteneraryEnabledDates2 = {
         {
             'year': 2023,
             'month': 2,
+        },
+        {
+            'year': 2023,
+            'month': 3,
         }
     ],
     'enabledDays': [
@@ -451,3 +441,181 @@ const iteneraryEnabledDates2 = {
         ['2023.1.12'],
     ]
 }
+
+// по клику на маршрут в поиске получаем ее активные дапазоны
+const nextIteneraryEnabledDates = {
+    'dates': [
+        {
+            'year': 2023,
+            'month': 2,
+        },
+        {
+            'year': 2023,
+            'month': 3,
+        }
+    ],
+    'enabledDays': [
+        ['2023.2.28'],
+        ['2023.2.27'],
+        ['2023.2.1'],
+        ['2023.2.2'],
+        ['2023.2.3'],
+        ['2023.2.4'],
+        ['2023.3.10'],
+        ['2023.3.11'],
+        ['2023.3.12'],
+    ]
+}
+
+// финалные маршруты и их машины зависят от подоранных машин и маршрутов
+const finalIteneraries = [
+    {
+        'naming': 'Cabo da Roca — Nazare. Portugal',
+        'description': 'Three days journey with two nights. Hotel “Belmond”.',
+        'map': 'img/countries/maps/portugal.svg',
+        'cars': [
+            {
+                'company': 'ABARTH',
+                'mark': '124 Spider',
+                'info': '94 PS / 4-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/abarth/124-spider.png'
+            },
+            {
+                'company': 'ABARTH',
+                'mark': '125 Spider',
+                'info': '95 PS / 5-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/abarth/124-spider.png'
+            },
+            {
+                'company': 'ABARTH',
+                'mark': '126 Spider',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/abarth/124-spider.png'
+            }
+        ]
+    },
+    {
+        'naming': 'Ocean and best view roads. Portugal',
+        'description': 'Three days journey with two nights. Hotel “Belmond”.',
+        'map': 'img/countries/maps/portugal.svg',
+        'cars': [
+            {
+                'company': 'BMW',
+                'mark': 'M3',
+                'info': '94 PS / 4-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/bmw/bmw-mark.png'
+            },
+            {
+                'company': 'BMW',
+                'mark': 'M5',
+                'info': '95 PS / 5-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/bmw/bmw-mark.png'
+            },
+            {
+                'company': 'BMW',
+                'mark': 'M7',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/bmw/bmw-mark.png'
+            }
+        ]
+
+    },
+    {
+        'naming': 'Big Portugal Journey',
+        'description': 'Three days journey with two nights. Hotel “Belmond”.',
+        'map': 'img/countries/maps/germany.svg',
+        'cars': [
+            {
+                'company': 'AUDI',
+                'mark': 'Q3',
+                'info': '94 PS / 4-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q5',
+                'info': '95 PS / 5-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q7',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q8',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q79',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q10',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'AUDI',
+                'mark': 'Q11',
+                'info': '96 PS / 6-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            }
+        ]
+    },
+    {
+        'naming': 'Postcard views and best autobans. Germany',
+        'description': 'Three days journey with two nights. Hotel “Belmond”.',
+        'map': 'img/countries/maps/italy.svg',
+        'cars': [
+            {
+                'company': 'MAZDA',
+                'mark': 'MX 5',
+                'info': '94 PS / 4-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/audi/a110.png'
+            },
+            {
+                'company': 'MAZDA',
+                'mark': 'MX 6',
+                'info': '95 PS / 5-seats',
+                'price': '1500',
+                'preorder_price': '500',
+                'image': 'img/cars/mazda/mx-5.png'
+            }
+        ]
+    }
+];

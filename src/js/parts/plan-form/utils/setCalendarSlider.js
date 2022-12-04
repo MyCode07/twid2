@@ -8,10 +8,16 @@ export function setCalendarSlider(swiper, calendarBody) {
     const prevSlideButton = calendarSwiper.closest('.item-form').querySelector('.calendar__slider-prev');
     const nextSlideButton = calendarSwiper.closest('.item-form').querySelector('.calendar__slider-next');
 
-    nextSlideButton.classList.remove('_hide');
 
     calendarSwiper.classList.add('swiper');
     calendarBody.classList.add('swiper-wrapper');
+
+    if (calendarSlides.length <= 2) {
+        nextSlideButton.classList.add('_hide');
+    }
+    else {
+        nextSlideButton.classList.remove('_hide');
+    }
 
     calendarSlides.forEach(slide => {
         slide.classList.add('swiper-slide');
@@ -29,6 +35,7 @@ export function setCalendarSlider(swiper, calendarBody) {
             Pagination,
             Grid
         ],
+
 
 
         allowTouchMove: false,
@@ -52,7 +59,7 @@ export function setCalendarSlider(swiper, calendarBody) {
                     prevSlideButton.classList.remove('_active');
                 }
 
-                if (swiper.activeIndex == swiper.slides.length - slidesPerVew) {
+                if (swiper.activeIndex == swiper.slides.length - 2) {
                     nextSlideButton.classList.add('_hide');
                 }
                 else {

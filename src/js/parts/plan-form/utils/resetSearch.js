@@ -4,6 +4,11 @@ export function resetSearch(searchButton) {
 
     if (searchButton.classList.contains('_active')) {
         if (searchButton.classList.contains('_reset')) {
+
+            if (document.querySelector('[data-id="open-search"]').classList.contains('_empty')) {
+                document.querySelector('[data-id="open-search"]').classList.remove('_empty')
+            }
+
             searchButton.classList.remove('_active')
             searchButton.dataset.disabled = "true";
             searchButton.querySelector('span').textContent = 'Search';

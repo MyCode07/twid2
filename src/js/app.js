@@ -17,6 +17,6 @@ import './parts/animations.js';
 import './parts/plan-form/plan-form.js';
 
 
-import './parts/road.js';
+import './parts/road/road.js';
 
-import './parts/register.js';
+import './parts/register.js'; 

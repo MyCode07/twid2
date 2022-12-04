@@ -53,7 +53,7 @@ function getChoosedCounts(checkboxName, activeButton, type) {
     }
 }
 
-export function getChusedItenerariesAndChoosedCars(activeButton) {
+export function getChооsedItenerariesAndChoosedCars(activeButton) {
     getChoosedCounts('form-country-item', activeButton, 'open-countries');
     getChoosedCounts('form-car-item', activeButton, 'open-cars');
-}
+} 
