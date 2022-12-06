@@ -1,8 +1,10 @@
 .countrys {
-    padding-top: 190px;
     @include adaptive-value("padding-bottom", 120, 47, 1);
+    padding-top: 190px;
     position: relative;
-
+    @media (max-width: 992px) {
+        padding-top: 150px;
+    }
     // .countrys__container
 
     &__container {
@@ -33,11 +35,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        & > :not(:last-child) {
-            margin-right: 20px;
-        }
-
+        gap: 20px;
         a {
             max-width: 220px;
             width: 100%;
@@ -48,7 +46,6 @@
             @include adaptive-value("height", 60, 50, 1);
             border: 1px solid $mainColor;
             border-radius: 10px;
-            
             font-style: normal;
             font-weight: 700;
             font-size: 18px;
@@ -79,18 +76,19 @@
                 }
             }
         }
-
-        @media (max-width: $mobileWidthMax) {
+        @media (max-width: 992px) {
             flex-wrap: wrap;
             justify-content: center;
-
-            & :nth-child(5) {
-                margin-right: 20px;
-            }
-
+        }
+        @media (max-width: 515px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            place-content: center;
             a {
-                margin-top: 20px;
             }
+        }
+        @media (max-width: 425px) {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
@@ -154,7 +152,7 @@
 
             h4 {
                 margin-bottom: 10px;
-                
+
                 font-style: normal;
                 font-weight: 700;
                 font-size: 14px;
@@ -190,7 +188,6 @@
         }
 
         button {
-            
             font-style: normal;
             font-weight: 400;
             font-size: 12px;
