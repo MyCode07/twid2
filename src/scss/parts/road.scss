@@ -100,20 +100,6 @@
 
 .road__calendar {
     padding-bottom: 60px;
-    position: relative;
-
-    &:after {
-        content: "";
-        display: block;
-        background-image: url("@img/noise-middle.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 100%;
-        max-width: $containerWithPadding;
-        height: 90px;
-        margin-top: 60px;
-        margin-inline: auto;
-    }
 
     // .road__calendar-container
 
@@ -283,184 +269,64 @@
     }
 }
 
-.details {
-    @include adaptive-value("padding-bottom", 315, 150, 1);
+.road {
+    // .road__slider
 
-    // .details__container
+    &__slider {
+        padding-bottom: 300px;
+        // .road__slider-container
 
-    &__container {
-    }
-
-    // .details__body
-
-    &__body {
-    }
-
-    // .details__row
-
-    &__row {
-        margin-top: 120px;
-        position: relative;
-        counter-reset: day;
-
-        h3 {
-            display: block;
-            margin-bottom: 56px;
-
-            font-style: normal;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 0.6;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: $red;
+        &-container {
         }
 
-        // .details__row-item
+        // .road__slider-body
 
-        &-item {
-            margin-bottom: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid $darkGray;
-        }
-    }
-
-    // .details__bottom
-
-    &__bottom {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 0.6;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: $red;
-
-        &:after {
-            margin-top: 93px;
-        }
-
-        a,
-        span {
-            color: inherit;
-            line-height: inherit;
-        }
-    }
-}
-
-.grid-item {
-    counter-increment: day;
-
-    // .grid-item__body
-
-    &__body {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    // .grid-item__info
-
-    &__info {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        margin-right: 20px;
-
-        h5 {
+        &-body {
             position: relative;
-            &:after {
-                position: absolute;
-                content: "";
-                left: 0;
-                top: 50%;
-                transform: translate(0, -50%);
-                width: 11px;
-                height: 32px;
-                background-image: url("@img/about/flag.png");
-                background-repeat: no-repeat;
-                background-position: left;
-                background-size: auto;
-            }
+        }
 
-            &:before {
-                content: counter(day) ".";
-                margin: 0 15px;
+        // .road__slider-row
+
+        &-row {
+        }
+
+        // .road__slider-content
+
+        &-content {
+        }
+
+        // .road__slider-slide
+
+        &-slide {
+            div {
+                margin-bottom: 20px;
+                img {
+                    width: 100%;
+                    height: 700px;
+                }
+            }
+            p {
+                font-family: "Inter";
                 font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 1;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
-                color: $red;
-            }
-
-            font-style: normal;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 1;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: $mainColor;
-        }
-
-        p {
-            flex: 1 1 auto;
-            margin-top: 20px;
-
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 1.33;
-            color: $mainColor;
-        }
-
-        span {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 1;
-            color: $mainColor;
-
-            label {
-                margin-right: 10px;
-
-                font-style: normal;
-                font-weight: 700;
-                font-size: 14px;
-                line-height: 1.29;
-                color: $red;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 100%;
+                color: #002532;
             }
         }
 
-        img {
-        }
-    }
+        // .road__slider-controll
 
-    // .grid-item__img
-
-    &__img {
-        width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        span {
-            margin: 0;
-        }
-    }
-
-    // .grid-item__image
-
-    &__image {
-        padding-top: 50px;
-        width: 100%;
-        flex: 0 0 681px;
-
-        img {
-            width: 100%;
-            min-height: 482px;
-            object-fit: cover;
+        &-controll {
+            display: flex;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            cursor: pointer;
+            img {
+                pointer-events: none;
+            }
         }
     }
 }

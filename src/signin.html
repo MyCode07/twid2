@@ -1,0 +1,34 @@
+@@include('html/header-register.html',{'title':'Log In', 'logo':'signin-logo.svg'})
+
+<main class="login-page">
+    <div class="login">
+        <h1 class="_metal">Log in</h1>
+        <form action="№" class="form" autocomplete="off">
+            <div class="login-content">
+                <div class="form-item__error" style="display: none;">
+                </div>
+                <div class="form-item">
+                    <div class="form-item__input login-email">
+                        <input placeholder="E-mail" type="email" name="" data-required="false" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-item__input login-password">
+                        <input class="password" id="password" placeholder="Password" type="password"
+                            data-required="false" name="" minlength="8" autocomplete="off">
+                        <span class="show-password"></span>
+                    </div>
+                </div>
+                <div class="login-links">
+                    <a href="restore.html" class="forgot-passwot">Forgot your password?</a>
+                    <a href="register.html" class="creat-account">Don’t have an account?</a>
+                </div>
+
+                <button type="submit" class="login-btn" disabled> login</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="js/app.min.js"></script>
+</body>

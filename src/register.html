@@ -1,34 +1,45 @@
-@@include('html/header-register.html')
+@@include('html/header-register.html',{'title':'Register', 'logo': 'register-logo.svg'})
 
 <main class="register-page">
     <div class="register">
         <h1 class="_metal">REGISTER</h1>
-        <form action="№" class="register-body" autocomplete="off">
+        <form action="№" class="form" autocomplete="off">
             <div class="register-content">
-                <div class="register-name register-place">
-                    <input placeholder="Full name" type="text" name="" data-required="false" autocomplete="off">
-                </div>
-                <div class="register-mail ">
-                    <div class="register-place">
-                        <input placeholder="E-mail" type="text" name="" data-required="false" autocomplete="off">
+                <div class="form-item">
+                    <div class="form-item__input register-name">
+                        <input placeholder="Full name" type="text" name="" data-required="false" autocomplete="off">
                     </div>
-                    <div class="register-mail-exists">
+                </div>
+                <div class="form-item">
+                    <div class="form-item__input register-email">
+                        <input placeholder="E-mail" type="email" name="" data-required="false" autocomplete="off">
+                    </div>
+                    <div class="form-item__exists register-mail-exists" style="display: none;">
                         <label>
                             Sorry, but this e-mail is already exists.
                         </label>
-                        <span>Restore account</span>
+                        <a href="restore.html">Restore account</a>
                     </div>
                 </div>
-                <div class="register-password register-place">
-                    <input class="password" id="password" placeholder="Password" type="password" data-required="false"
-                        name="" minlength="8" autocomplete="off">
+                <div class="form-item">
+                    <div class="form-item__input register-password">
+                        <input class="password" id="password" placeholder="Password" type="password"
+                            data-required="false" name="" minlength="8" autocomplete="off">
+                        <span class="show-password"></span>
+                    </div>
                 </div>
-                <span class="show-password" style="display: none;">show password</span>
-
-                <label>The password must be at least 8 characters and contain uppercase letters and numbers.</label>
+                <label class="passwords-allow">The password must be at least 8 characters and contain uppercase letters
+                    and numbers.</label>
                 <span class="register-password-generate">Generate safe password</span>
-                <button type="submit" class="register-btn"> REGISTER</button>
+                <button type="submit" class="register-btn" disabled> REGISTER</button>
+            </div>
         </form>
+        <div class="form__registered">
+            <div class="form__registered-welcome"><span class="unsername">Dear John</span>! Thank you so much for choosing Twid. We are sure that all of journeys will be perfect.</div>
+            <div class="form__registered-complete">Please complete the registration with a link
+            we sent to your e-mail. Thanks!</div>
+            <a href="/">back to main</a>
+        </div>
     </div>
 </main>
 

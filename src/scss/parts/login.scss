@@ -1,0 +1,147 @@
+.login {
+    // .login
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: $darkGray;
+
+    @media (max-width: $mobileWidthMax) {
+        display: block;
+        padding-top: 100px;
+    }
+
+    h1 {
+        display: none;
+        @media (max-width: $mobileWidthMax) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 0.75;
+            text-transform: uppercase;
+            color: $mainColor;
+        }
+    }
+    // .login-body
+
+    &-body {
+    }
+
+    // .login-content
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 98px;
+
+        label {
+            display: block;
+            margin: 10px 0 20px 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            color: $mainColor;
+        }
+
+        @media (max-width: $mobileWidthMax) {
+            padding: 0 15px;
+        }
+    }
+
+    // .login-item
+
+    // .login-name
+
+    &-name {
+    }
+
+    // .login-mail
+
+    &-mail {
+        position: relative;
+    }
+
+    // .login-password
+
+    &-password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .passwords-allow {
+        margin-bottom: 10px !important;
+    }
+
+    .login-password-generate {
+        cursor: pointer;
+        display: block;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1;
+        text-align: center;
+        color: $mainColor;
+        text-decoration: underline;
+    }
+
+    // .login-btn
+
+    &-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 10px;
+        width: 280px;
+        background-color: $red;
+        border-radius: 10px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.33;
+        color: $lightGray;
+        text-align: center;
+        text-transform: uppercase;
+
+        margin: 306px auto 0 auto;
+
+        @media (max-width: 1440px) and (max-height: 600px) {
+            margin: 150px auto 0 auto;
+        }
+
+        @media(max-width: 425px) {
+            margin: 90px auto 0 auto;
+        }
+    }
+
+    // links
+
+    &-links {
+        margin-top: -10px;
+        & > :not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: block;
+            margin-inline: auto;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            text-decoration-line: underline;
+            color: $mainColor;
+        }
+    }
+}

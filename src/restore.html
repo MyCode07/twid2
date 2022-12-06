@@ -1,0 +1,29 @@
+@@include('html/header-register.html',{'title':'Restore Account', 'logo': 'restore-logo.svg'})
+
+<main class="restore-page">
+    <div class="restore">
+        <h1 class="_metal">Restore account</h1>
+        <form action="№" class="form" autocomplete="off">
+            <div class="restore-content">
+                <div class="form-item__error" style="display: none;">
+
+                </div>
+                <div class="form-item">
+                    <div class="form-item__input restore-email">
+                        <input placeholder="E-mail" type="email" name="" data-required="false" autocomplete="off">
+                    </div>
+                    <label>We are going to send the restore link to your e-mail address.</label>
+                </div>
+
+                <button type="submit" class="restore-btn">restore</button>
+            </div>
+        </form>
+        <div class="restore-sent">
+            <p>We have sent the restore link to your e-mail. Please check.</p>
+            <a href="" class="back-to-main">back to main</a>
+        </div>
+    </div>
+</main>
+
+<script src="js/app.min.js"></script>
+</body>

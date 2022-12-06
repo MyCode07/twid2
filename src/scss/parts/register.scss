@@ -5,6 +5,7 @@
     justify-content: center;
     min-height: 100vh;
     background-color: $darkGray;
+
     @media (max-width: $mobileWidthMax) {
         display: block;
         padding-top: 100px;
@@ -28,6 +29,11 @@
     // .register-body
 
     &-body {
+    }
+
+    // .register-content
+
+    &-content {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -50,74 +56,7 @@
         }
     }
 
-    // .register-content
-
-    &-content {
-        & > :not(:last-child) {
-            margin-bottom: 40px;
-
-            @media (max-width: $mobileWidthMax) {
-                margin-bottom: 30px;
-            }
-        }
-    }
-
-    // .register-place
-
-    &-place {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        max-width: 580px;
-        width: 100%;
-        height: 49px;
-        border: 1px solid #001116;
-        border-radius: 10px;
-
-        input {
-            text-align: center;
-            padding: 5px 10px;
-            width: 100%;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 40px;
-            line-height: 0.6;
-            color: $mainColor;
-            outline: none;
-            &:focus {
-                background-color: inherit;
-            }
-        }
-
-        input::placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: $mainColor;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                position: relative;
-
-                &:after {
-                    display: block;
-                    position: absolute;
-                    content: "";
-                    right: -40px;
-                    top: 10px;
-                    background: url("@img/svg/checked-register.svg");
-                    background-repeat: no-repeat;
-                    z-index: 2;
-                    background-size: 20px 18px;
-                    width: 20px;
-                    height: 18px;
-                }
-            }
-        }
-    }
+    // .register-item
 
     // .register-name
 
@@ -128,43 +67,23 @@
 
     &-mail {
         position: relative;
-
-        // .register-mail-exists
-
-        &-exists {
-            position: absolute;
-            bottom: -18px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            label {
-                display: inline;
-                color: $red;
-                margin: 0;
-                padding-right: 5px;
-            }
-
-            span {
-                cursor: pointer;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 1;
-                text-decoration: underline;
-            }
-        }
     }
 
     // .register-password
 
     &-password {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .passwords-allow {
+        margin-bottom: 10px !important;
     }
 
     .register-password-generate {
         cursor: pointer;
         display: block;
-        margin-bottom: 96px;
         font-style: normal;
         font-weight: 400;
         font-size: 12px;
@@ -172,10 +91,6 @@
         text-align: center;
         color: $mainColor;
         text-decoration: underline;
-
-        @media (max-width: 1440px) and (max-height: 600px) {
-            margin-bottom: 43px;
-        }
     }
 
     // .register-btn
@@ -188,8 +103,10 @@
         width: 280px;
         border: 1px solid $red;
         border-radius: 10px;
-        margin: 0 auto;
-        cursor: pointer;
+
+        &[disabled] {
+            cursor: no-drop;
+        }
 
         font-style: normal;
         font-weight: 700;
@@ -198,12 +115,213 @@
         color: $mainColor;
         text-align: center;
         text-transform: uppercase;
+
+        margin: 96px auto 0 auto;
+        @media (max-width: 1440px) and (max-height: 600px) {
+            margin: 43px auto 0 auto;
+        }
+    }
+}
+
+form {
+    &._valid {
+        .form-item {
+            &:after {
+                display: block;
+                position: absolute;
+                content: "";
+                right: -40px;
+                top: 10px;
+                background: url("@img/svg/checked-register.svg");
+                background-repeat: no-repeat;
+                z-index: 2;
+                background-size: 20px 18px;
+                width: 20px;
+                height: 18px;
+            }
+        }
+
+        .register-btn {
+            background-color: $red;
+            color: #fff;
+        }
+    }
+
+    &._exist-email {
+        .form-item__exists {
+            display: block !important;
+        }
+    }
+}
+
+.form-item {
+    max-width: 580px;
+    width: 100%;
+    height: 49px;
+    border: 1px solid #001116;
+    border-radius: 10px;
+    position: relative;
+
+    &._novalid {
+        border-color: $red;
+    }
+
+    &:not(:last-of-type) {
+        margin-bottom: 40px;
+
+        @media (max-width: $mobileWidthMax) {
+            margin-bottom: 30px;
+        }
+    }
+
+    input {
+        text-align: center;
+        padding: 0 10px;
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 0.6;
+        color: $mainColor;
+        outline: none;
+
+        &:focus {
+            background-color: inherit;
+        }
+    }
+
+    input::placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: $mainColor;
     }
 
     .show-password {
-        margin: -40px auto 0 auto;
-        display: block;
-        width: fit-content;
+        width: 30px;
+        height: 30px;
+        background-image: url("@img/svg/hide_icon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        left: -2px;
         cursor: pointer;
+
+        &._visible {
+            background-image: url("@img/svg/show_icon.svg");
+        }
     }
+
+    // .form-item__exists
+
+    &__exists {
+        text-align: center;
+
+        position: relative;
+        top: -5px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 !important;
+
+        label {
+            display: inline;
+            color: $red;
+            margin: 0;
+            padding-right: 5px;
+        }
+
+        a {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            text-decoration: underline;
+            color: $mainColor;
+        }
+    }
+
+    &._valid {
+        &:after {
+            display: block;
+            position: absolute;
+            content: "";
+            right: -40px;
+            top: 10px;
+            background: url("@img/svg/checked-register.svg");
+            background-repeat: no-repeat;
+            z-index: 2;
+            background-size: 20px 18px;
+            width: 20px;
+            height: 18px;
+        }
+    }
+}
+
+.form__registered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    display: none;
+
+    // .form__registered-welcome
+
+    &-welcome {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.33;
+        text-align: center;
+        color: $mainColor;
+        max-width: 450px;
+    }
+
+    // .form__registered-complete
+
+    &-complete {
+        margin-top: 20px;
+        padding: 10px 98px;
+        max-width: 580px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1.33;
+        text-align: center;
+        color: $mainColor;
+
+        border: 1px solid $red;
+        border-radius: 10px;
+    }
+
+    .back-to-main {
+        margin-top: 229px;
+
+        @media (max-width: 1440px) and (max-height: 600px) {
+            margin-top: 100px;
+        }
+    }
+}
+
+.back-to-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    width: 280px;
+    background-color: $red;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.33;
+    color: $lightGray;
+    text-align: center;
+    text-transform: uppercase;
+    margin-inline: auto;
 }

@@ -5,6 +5,8 @@ import { chooseRoadEnabledDatesDiapason } from './chooseRoadEnabledDatesDiapason
 
 import { getAvailebleCars } from './getAvailebleCars.js';
 
+import { Swiper, Navigation } from 'swiper';
+
 document.addEventListener('DOMContentLoaded', function (e) {
 
     const roadCalendarBody = document.querySelector('.road__calendar-calendar');
@@ -51,3 +53,14 @@ const roadDates = {
 }
 
 const availebleCars = ['BMW', 'Ferrari', 'ABARTH', 'BMW', 'Ferrari', 'ABARTH']
+
+new Swiper('.road__slider-row', {
+    modules: [
+        Navigation,
+    ],
+    navigation: {
+        'prevEl': ".road__slider-prev",
+        'nextEl': ".road__slider-next",
+    },
+    loop: true,
+})
