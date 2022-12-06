@@ -1,7 +1,7 @@
 .car {
     padding-top: 114px;
     margin-bottom: 0 !important;
-
+    margin-bottom: 0;
     h1 {
         span {
             font-style: normal;
@@ -73,10 +73,10 @@
                 align-items: center;
                 div {
                     width: 100%;
-                    @include adaptive-value('padding-top', 15, 5, 1);
-                    @include adaptive-value('padding-bottom', 15, 5, 1);
-                    @include adaptive-value('padding-left', 15, 5, 1);
-                    @include adaptive-value('padding-right', 15, 5, 1);
+                    @include adaptive-value("padding-top", 15, 5, 1);
+                    @include adaptive-value("padding-bottom", 15, 5, 1);
+                    @include adaptive-value("padding-left", 15, 5, 1);
+                    @include adaptive-value("padding-right", 15, 5, 1);
                     background: unset;
                     p {
                         text-align: center;
