@@ -15,42 +15,55 @@
     // .auto__tabs
 
     &__tabs {
-        @include adaptive-value("margin-top", 73, 58, 1);
         @include adaptive-value("margin-bottom", 40, 20, 1);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         place-content: center;
-        @media (max-width: 678px) {
+
+        @media (min-width: $mobileWidthMin) {
+            @include adaptive-value("margin-top", 73, 58, 1);
+        }
+
+        @media (max-width: $mobileWidthMax) {
             grid-template-columns: repeat(3, 1fr);
-            margin-top: 0 !important;
         }
-        @media (max-width: 500px) {
-            grid-template-columns: repeat(2, 50%);
+
+        @media (max-width: 425px) {
+            grid-template-columns: repeat(2, 1fr);
         }
+
         a {
-            padding: 18px 17px;
+            height: 60px;
+            width: 100%;
+
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid $mainColor;
             border-radius: 10px;
+            @include adaptive-value("font-size", 18, 14, 1);
+
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.33;
+            color: $mainColor;
+
+            @media (max-width: $mobileWidthMax) {
+                height: 40px;
+                border-radius: 6px;
+            }
 
             span {
-                text-align: center;
                 flex: 1 1 auto;
                 display: block;
-
-                font-style: normal;
-                font-weight: 700;
-                font-size: 18px;
-                line-height: 133%;
-                color: $mainColor;
             }
 
             @media (any-hover: hover) {
                 &:hover {
                     border: 1px solid $red;
+
                     span {
                         color: $red;
                     }
@@ -93,8 +106,16 @@
 }
 
 .model {
-    @media (min-width: 992px) {
-        @include adaptive-value("margin-bottom", 440, 205, 1);
+    @media (min-width: $mobileWidthMin) {
+        @include adaptive-value("padding-bottom", 417, 133, 1);
+    }
+
+    @media (max-width: $mobileWidthMax) {
+        margin-bottom: 60px;
+
+        &:after {
+            margin-top: 27px;
+        }
     }
 
     // .model__container
@@ -111,29 +132,20 @@
 
     &__item {
         width: 100%;
-
-        @media (max-width: $mobileWidthMax) {
-            width: calc(100% + 30px);
-            margin-left: -15px;
-        }
-
-        @include adaptive-value("margin-bottom", 185, 120, 1);
         position: relative;
 
-        &:before {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: -124px;
-            border-radius: 5px;
-            background-color: $lightGray;
-            @include adaptive-value("height", 90, 45, 1);
-            width: 100%;
+        &:not(:last-of-type) {
+            @include adaptive-value("margin-bottom", 80, 40, 1);
 
-            background-image: url("@img/noise-big.png");
-
-            @media (max-width: $mobileWidthMax) {
-                bottom: -75px;
+            &:after {
+                margin-top: 41px;
+                display: block;
+                content: "";
+                border-radius: 5px;
+                background-color: $lightGray;
+                @include adaptive-value("height", 90, 45, 1);
+                width: 100%;
+                background-image: url("@img/noise-big.png");
             }
         }
 
@@ -150,14 +162,9 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 22px;
 
-        @media (max-width: 1270px) {
+        @media (max-width: $mobileWidthMax) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media (max-width: $mobileWidthMax) {
-            grid-template-columns: repeat(1, 1fr);
-            gap: 30px 0;
-        }
-        background-image: url("@img/cars/alpha-romeo/");
     }
 }

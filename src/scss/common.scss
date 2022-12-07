@@ -111,7 +111,7 @@ img {
     transition: all 0.3s ease 0s;
     @media (any-hover: hover) {
         &:hover {
-            color: $orange;
+            color: $orange !important;
         }
     }
 }
@@ -163,6 +163,33 @@ img {
         left: 0;
         width: 100%;
         background-image: url("@img/noise-footer.png");
+        background-repeat: no-repeat;
+        background-size: 100% 1em;
+        display: block;
+        @media (min-width: $mobileWidthMin) {
+            @include adaptive-value("height", 385, 100, 1);
+            @include adaptive-value("font-size", 385, 100, 1);
+        }
+        @media (max-width: $mobileWidthMax) {
+            position: relative;
+            background-image: url("@img/noise.png");
+            height: 26px;
+            background-size: 100% 26px;
+        }
+    }
+}
+
+._has-bigest-noise-2 {
+    position: relative;
+
+    &:after {
+        content: "";
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-image: url("@img/noise-footer-2.png");
         background-repeat: no-repeat;
         background-size: 100% 1em;
         display: block;
@@ -232,16 +259,18 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include adaptive-value("margin-bottom", 75, 50, 1);
+    @include adaptive-value("margin-bottom", 75, 25, 1);
 
     @media (max-width: $mobileWidthMax) {
         flex-direction: column;
         align-items: center;
+
         h1 {
             text-align: center;
         }
+
         img {
-            margin: 15px 0;
+            margin-top: 15px;
             height: 50px;
         }
     }
@@ -474,7 +503,14 @@ img {
 .auto__cart {
     // .auto__cart-content
 
+    display: flex;
+    flex-direction: column;
+
     &-content {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+
         background: $lightGray;
         border-radius: 5px;
         margin-bottom: 13px;
@@ -484,6 +520,8 @@ img {
         @include adaptive-value("padding-right", 18, 5, 1);
 
         h4 {
+            flex: 1 1 auto;
+
             margin-bottom: 10px;
             font-family: "Inter";
             font-style: normal;
@@ -502,10 +540,7 @@ img {
 
         img {
             margin-bottom: 27px;
-
-            @media (max-width: $mobileWidthMax) {
-                width: 100%;
-            }
+            max-width: 100%;
         }
     }
 

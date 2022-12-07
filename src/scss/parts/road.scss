@@ -1,6 +1,7 @@
 .road {
     position: relative;
     height: 100vh;
+    @include adaptive-value("margin-bottom", 76, 60, 1);
 
     // .road__container
 
@@ -32,9 +33,9 @@
         padding-top: 150px;
 
         h1 {
+            @include adaptive-value("font-size", 95, 40, 1);
             font-style: normal;
             font-weight: 400;
-            font-size: 95px;
             line-height: 0.68;
             text-transform: uppercase;
             color: #ffffff;
@@ -48,13 +49,17 @@
             font-size: 40px;
             line-height: 0.6;
             color: #ffffff;
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+            }
         }
     }
 }
 
 .about {
-    margin-top: 76px;
-    margin-bottom: 90px;
+    @include adaptive-value("margin-bottom", 90, 60, 1);
+
     // .about__container
 
     &__container {
@@ -66,6 +71,12 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+
+        @media (max-width: $mobileWidthMax) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
     }
 
     // .about__text
@@ -75,18 +86,29 @@
         font-family: "Metal";
         font-style: normal;
         font-weight: 400;
-        font-size: 25px;
         line-height: 1;
         color: $mainColor;
+        @include adaptive-value("font-size", 25, 18, 1);
+
+        @media (min-width: $mobileWidthMin) {
+            @include adaptive-value("margin-right", 80, 40, 1);
+        }
+
+        @media (max-width: $mobileWidthMax) {
+            max-width: none;
+            margin-bottom: 25px;
+        }
     }
 
     // .about__map
 
     &__map {
         img {
-            min-width: 382px;
             margin-bottom: 11px;
+
+            @include adaptive-value("width", 382, 300, 1);
         }
+
         a {
             display: block;
             font-style: normal;
@@ -112,21 +134,11 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+
         @media (max-width: 992px) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        &:after {
-            position: absolute;
-            content: "";
-            left: 0;
-            bottom: -124px;
-            border-radius: 5px;
-            background-color: #d9dcde;
-            height: 90px;
-            width: 100%;
-            background-image: url(../img/noise-big.png);
         }
     }
 
@@ -134,6 +146,7 @@
 
     &-left {
         margin-right: 85px;
+
         @media (max-width: 992px) {
             margin: 0 0 30px 0;
         }
@@ -155,6 +168,7 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: $red;
+
             @media (max-width: 992px) {
                 width: 100%;
                 text-align: center;
@@ -184,15 +198,18 @@
 
     &-calendar {
         display: flex;
+
         @media (max-width: 678px) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             & > :not(:last-child) {
                 margin-right: 0 !important;
                 margin-bottom: 40px;
             }
         }
+
         & > :not(:last-child) {
             margin-right: 65px;
         }
@@ -206,10 +223,12 @@
         justify-content: space-between;
         max-width: 380px;
         width: 100%;
+
         @media (max-width: 992px) {
             text-align: center;
             align-items: center;
         }
+
         h4 {
             font-style: normal;
             font-weight: 700;
@@ -233,6 +252,7 @@
             padding: 15px 0;
             width: 180px;
             align-self: flex-end;
+
             @media (max-width: 992px) {
                 margin: 0 auto;
             }
@@ -243,6 +263,7 @@
 
     &-right-info {
         margin-bottom: 21px;
+
         @media (max-width: 992px) {
             width: 100%;
             text-align: center;
@@ -251,6 +272,7 @@
             justify-content: space-between;
             flex: 0 0 50%;
         }
+
         h5 {
             font-style: normal;
             font-weight: 700;
@@ -287,6 +309,7 @@
         display: flex;
         flex-wrap: wrap;
         margin-left: -10px;
+        
         & > :not(:last-child) {
             position: relative;
 
@@ -314,64 +337,87 @@
     }
 }
 
-.road {
-    // .road__slider
+.road__slider {
+    @media (min-width: $mobileWidthMin) {
+        @include adaptive-value("padding-bottom", 442, 130, 1);
+    }
 
-    &__slider {
-        padding-bottom: 300px;
-        // .road__slider-container
+    @media (max-width: $mobileWidthMax) {
+        margin-bottom: 60px;
 
-        &-container {
+        &:after {
+            margin-top: 26px;
         }
+    }
 
-        // .road__slider-body
+    // .road__slider-container
 
-        &-body {
-            position: relative;
+    &-container {
+        @media (max-width: $mobileWidthMax) {
+            padding: 0 !important;
         }
+    }
 
-        // .road__slider-row
+    // .road__slider-body
 
-        &-row {
-        }
+    &-body {
+        position: relative;
+    }
 
-        // .road__slider-content
+    // .road__slider-row
 
-        &-content {
-        }
+    &-row {
+    }
 
-        // .road__slider-slide
+    // .road__slider-content
 
-        &-slide {
-            div {
-                margin-bottom: 20px;
-                img {
-                    width: 100%;
-                    height: 700px;
-                }
-            }
-            p {
-                font-family: "Inter";
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 100%;
-                color: #002532;
-            }
-        }
+    &-content {
+    }
 
-        // .road__slider-controll
+    // .road__slider-slide
 
-        &-controll {
-            display: flex;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            z-index: 10;
-            cursor: pointer;
+    &-slide {
+        div {
+            margin-bottom: 20px;
+
             img {
-                pointer-events: none;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                @include adaptive-value("height", 700, 360, 1);
             }
+        }
+
+        p {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 1;
+            color: $mainColor;
+
+            @media (max-width: $mobileWidthMax) {
+                padding: 0 15px;
+            }
+        }
+    }
+
+    // .road__slider-controll
+
+    &-controll {
+        display: flex;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        cursor: pointer;
+
+        @media (max-width: $mobileWidthMax) {
+            padding: 0 15px;
+        }
+
+        img {
+            pointer-events: none;
         }
     }
 }

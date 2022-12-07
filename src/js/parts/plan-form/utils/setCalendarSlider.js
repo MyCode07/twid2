@@ -1,4 +1,4 @@
-import { Swiper, Navigation, Pagination, Grid } from 'swiper';
+import { Swiper, Navigation, Grid } from 'swiper';
 
 export function setCalendarSlider(swiper, calendarBody) {
 
@@ -7,7 +7,6 @@ export function setCalendarSlider(swiper, calendarBody) {
     const calendarSlides = calendarSwiper.querySelectorAll('.calendar__item');
     const prevSlideButton = calendarSwiper.closest('.item-form').querySelector('.calendar__slider-prev');
     const nextSlideButton = calendarSwiper.closest('.item-form').querySelector('.calendar__slider-next');
-
 
     calendarSwiper.classList.add('swiper');
     calendarBody.classList.add('swiper-wrapper');
@@ -28,15 +27,16 @@ export function setCalendarSlider(swiper, calendarBody) {
     })
 
 
+    let lastIntex = 2
+    if (window.innerWidth <= 768) {
+        lastIntex = Math.floor(calendarSlides.length / 2) + 1
+    }
 
     new Swiper(`${swiper}`, {
         modules: [
             Navigation,
-            Pagination,
             Grid
         ],
-
-
 
         allowTouchMove: false,
 
@@ -45,13 +45,10 @@ export function setCalendarSlider(swiper, calendarBody) {
             'nextEl': '.calendar__slider-next',
         },
 
-        pagination: {
-            el: '.calendar__slider-pagination',
-            clickable: true,
-        },
-
         on: {
             slideChange: function (swiper) {
+                console.log(lastIntex);
+
                 if (swiper.activeIndex >= 1) {
                     prevSlideButton.classList.add('_active');
                 }
@@ -59,7 +56,7 @@ export function setCalendarSlider(swiper, calendarBody) {
                     prevSlideButton.classList.remove('_active');
                 }
 
-                if (swiper.activeIndex == swiper.slides.length - 2) {
+                if (swiper.activeIndex == swiper.slides.length - lastIntex) {
                     nextSlideButton.classList.add('_hide');
                 }
                 else {

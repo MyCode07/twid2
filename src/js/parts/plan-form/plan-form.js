@@ -243,6 +243,21 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 // активация кнопки поиска если условия выполнены (см. в функции)
                 activeateSearchButton()
                 activeButton.classList.remove('_active');
+
+                if (targetEl.closest('.item-form').dataset.id == "open-search") {
+                    console.log('da');
+                    if (searchButton.classList.contains('_active')) {
+                        searchButton.classList.add('_reset');
+                        searchButton.querySelector('span').textContent = 'Clear all';
+                    }
+                    else {
+                        searchButton.classList.remove('_reset')
+                        searchButton.querySelector('span').textContent = 'Search';
+                        if (document.querySelector('[data-id="open-search"]').classList.contains('_empty')) {
+                            document.querySelector('[data-id="open-search"]').classList.remove('_empty')
+                        }
+                    }
+                }
             }
         }
 

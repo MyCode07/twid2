@@ -76,6 +76,10 @@
             width: 100%;
             font-size: 30px;
         }
+
+        @media (max-width: 375px) {
+            font-size: 24px;
+        }
     }
 
     .item-form__type-item {
@@ -121,6 +125,10 @@
                     line-height: 133%;
                     color: $mainColor;
                     display: block;
+
+                    @media (max-width: 375px) {
+                        font-size: 16px;
+                    }
 
                     span {
                         font-weight: 400;
@@ -803,6 +811,14 @@
             align-items: center;
             justify-content: space-between;
 
+            @media (max-width: $mobileWidthMax) {
+                position: static;
+                transform: translate(0, 0);
+                max-width: 280px;
+                margin-top: 10px;
+                margin-inline: auto;
+            }
+
             img {
                 @media (any-hover: hover) {
                     &:hover {
@@ -817,10 +833,10 @@
             cursor: pointer;
             img {
                 pointer-events: none;
-            }
 
-            @media (max-width: $laptopWidth) {
-                display: none !important;
+                @media (max-width: $mobileWidthMax) {
+                    width: 35px;
+                }
             }
         }
 
@@ -922,9 +938,10 @@
         @include adaptive-value("padding-top", 50, 30, 1);
         @include adaptive-value("padding-bottom", 46, 30, 1);
 
-        @media (max-width: 500px) {
-            padding-top: 100px !important;
-            padding-bottom: 50px !important;
+        @media (max-width: 425px) {
+            padding-top: 100px;
+            padding-bottom: 30px;
+            padding-left: 15px;
         }
         ol {
             li {
@@ -954,6 +971,12 @@
                         box-shadow: 0 0 0 1px $mainColor;
                         border-color: #fff;
                         background-color: $red;
+                    }
+
+                    @media (max-width: 425px) {
+                        .bold {
+                            font-size: 16px;
+                        }
                     }
                 }
 
