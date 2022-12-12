@@ -11,7 +11,7 @@ import { clickOnDay } from './utils/clickOnDay.js';
 import { getChооsedItenerariesAndChoosedCars } from './utils/getChооsedItenerariesAndChoosedCars.js';
 
 // выбранные дни на основном календаре
-import { getChoosedDates, setChoosedDates } from './utils/choosedDates.js';
+import { getChoosedDates, setChoosedDates } from './utils/getChoosedDates.js';
 
 // актицвация кнопи поиска
 import { activeateSearchButton } from './utils/activeateSearchButton.js';
@@ -34,6 +34,9 @@ import { changeCarsInCarspopup } from './utils/changeCarsInCarspopup.js';
 // наведение на маршруты и на машины
 import { hoverOnCarsandIteneraries } from './utils/hoverOnCarsandIteneraries.js';
 
+// Финальный выбор машины
+import { getFinalChoosedCar } from './utils/getFinalChoosedCar.js';
+
 
 // проверка статуса активности кнопки добавления в корзину
 const addtoCartButton = document.querySelector('.add-to-cart');
@@ -50,13 +53,6 @@ export const addToCartButtonStatus = {
         }
     }
 }
-
-
-// вывод вынальный выборов в посике
-const finalChoosedCar = document.querySelector('#final-car');
-const finalChoosedItenerary = document.querySelector('#final-itenerary');
-const totalPrice = document.querySelector('#total-price');
-const preOrderPrice = document.querySelector('#preorder-price');
 
 
 
@@ -175,8 +171,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
                             targetEl.classList.add('_active');
 
                             // загрузка финальных маршрутов по входному парамертру
-                            // setFinalItenerearies('')
+                            // setFinalItenerearies('') если передаем пустой аргумент соотв. ничего и не будет
                             setFinalItenerearies(finalIteneraries)
+
+                            // загрузка машин для соотв. маршрута (см. в функции)
+                            const checkbox = document.querySelector('input[name="final-itinerary"]:checked');
+                            changeCarsInCarspopup(checkbox, finalIteneraries);
 
                             // по умолчанию акивный первый элемент финальных маршрутов 
                             finalIteneraryInput(document.querySelector('.final-itenerary-input:checked'), firstIteneraryEnabledDates);
@@ -266,8 +266,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             const checkbox = targetEl.closest('label').querySelector('input');
             if (checkbox.checked) {
 
-                // загрузка машин для соотв. маршрута (см. в функции)
-                changeCarsInCarspopup(checkbox, finalIteneraries);
+
                 document.querySelector('.cars__popup').classList.add('_open');
 
                 // но мильках отключем скролл документа
@@ -326,40 +325,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
         // выбор машины в попапе машин 
         if (targetEl.classList.contains('auto__cart-checkbox')) {
-            const checkBoxes = document.querySelectorAll('.auto__cart-checkbox:checked');
-
-            // смена содержание соотв. элементов вв зависимост от выбранной машины
-            if (checkBoxes.length >= 1) {
-                checkBoxes.forEach(input => {
-                    input.checked = false
-                });
-                targetEl.checked = true
-
-                finalChoosedCar.innerHTML = targetEl.id;
-                finalChoosedCar.dataset.mark = targetEl.dataset.info;
-                totalPrice.innerHTML = targetEl.dataset.price;
-                preOrderPrice.innerHTML = targetEl.dataset.preorder;
-
-                addToCartButtonStatus.car = true;
-            }
-            else {
-                targetEl.checked = false
-
-                finalChoosedCar.innerHTML = '<hr>';
-                finalChoosedCar.dataset.mark = '';
-                totalPrice.innerHTML = '<hr>';
-                preOrderPrice.innerHTML = '<hr>';
-
-                addToCartButtonStatus.car = false;
-            }
-
-            // проверка статуса кнопки добавления корзины
-            addToCartButtonStatus.status();
+            getFinalChoosedCar(targetEl);
         }
 
         // выбор маршрута в попапе поиска и смена календаря под этот маршрут
         if (targetEl.classList.contains('final-itenerary-input')) {
             finalIteneraryInput(targetEl, nextIteneraryEnabledDates);
+
+            // загрузка машин для соотв. маршрута (см. в функции)
+            changeCarsInCarspopup(targetEl, finalIteneraries);
         }
     })
 
@@ -485,11 +459,13 @@ const nextIteneraryEnabledDates = {
 // финалные маршруты и их машины зависят от подоранных машин и маршрутов
 const finalIteneraries = [
     {
+        'id': 'f1',
         'naming': 'Cabo da Roca — Nazare. Portugal',
         'description': 'Three days journey with two nights. Hotel “Belmond”.',
         'map': 'img/countries/maps/portugal.svg',
         'cars': [
             {
+                'id': 'c1',
                 'company': 'ABARTH',
                 'mark': '124 Spider',
                 'info': '94 PS / 4-seats',
@@ -498,6 +474,7 @@ const finalIteneraries = [
                 'image': 'img/cars/abarth/124-spider.png'
             },
             {
+                'id': 'c2',
                 'company': 'ABARTH',
                 'mark': '125 Spider',
                 'info': '95 PS / 5-seats',
@@ -506,6 +483,7 @@ const finalIteneraries = [
                 'image': 'img/cars/abarth/124-spider.png'
             },
             {
+                'id': 'c3',
                 'company': 'ABARTH',
                 'mark': '126 Spider',
                 'info': '96 PS / 6-seats',
@@ -516,11 +494,13 @@ const finalIteneraries = [
         ]
     },
     {
+        'id': 'f2',
         'naming': 'Ocean and best view roads. Portugal',
         'description': 'Three days journey with two nights. Hotel “Belmond”.',
         'map': 'img/countries/maps/portugal.svg',
         'cars': [
             {
+                'id': 'c4',
                 'company': 'BMW',
                 'mark': 'M3',
                 'info': '94 PS / 4-seats',
@@ -529,6 +509,7 @@ const finalIteneraries = [
                 'image': 'img/cars/bmw/bmw-mark.png'
             },
             {
+                'id': 'c5',
                 'company': 'BMW',
                 'mark': 'M5',
                 'info': '95 PS / 5-seats',
@@ -537,6 +518,7 @@ const finalIteneraries = [
                 'image': 'img/cars/bmw/bmw-mark.png'
             },
             {
+                'id': 'c6',
                 'company': 'BMW',
                 'mark': 'M7',
                 'info': '96 PS / 6-seats',
@@ -548,11 +530,13 @@ const finalIteneraries = [
 
     },
     {
+        'id': 'f3',
         'naming': 'Big Portugal Journey',
         'description': 'Three days journey with two nights. Hotel “Belmond”.',
         'map': 'img/countries/maps/germany.svg',
         'cars': [
             {
+                'id': 'c7',
                 'company': 'AUDI',
                 'mark': 'Q3',
                 'info': '94 PS / 4-seats',
@@ -561,6 +545,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c8',
                 'company': 'AUDI',
                 'mark': 'Q5',
                 'info': '95 PS / 5-seats',
@@ -569,6 +554,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c9',
                 'company': 'AUDI',
                 'mark': 'Q7',
                 'info': '96 PS / 6-seats',
@@ -577,6 +563,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c10',
                 'company': 'AUDI',
                 'mark': 'Q8',
                 'info': '96 PS / 6-seats',
@@ -585,6 +572,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c11',
                 'company': 'AUDI',
                 'mark': 'Q79',
                 'info': '96 PS / 6-seats',
@@ -593,6 +581,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c12',
                 'company': 'AUDI',
                 'mark': 'Q10',
                 'info': '96 PS / 6-seats',
@@ -601,6 +590,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c13',
                 'company': 'AUDI',
                 'mark': 'Q11',
                 'info': '96 PS / 6-seats',
@@ -611,11 +601,13 @@ const finalIteneraries = [
         ]
     },
     {
+        'id': 'f4',
         'naming': 'Postcard views and best autobans. Germany',
         'description': 'Three days journey with two nights. Hotel “Belmond”.',
         'map': 'img/countries/maps/italy.svg',
         'cars': [
             {
+                'id': 'c15',
                 'company': 'MAZDA',
                 'mark': 'MX 5',
                 'info': '94 PS / 4-seats',
@@ -624,6 +616,7 @@ const finalIteneraries = [
                 'image': 'img/cars/audi/a110.png'
             },
             {
+                'id': 'c14',
                 'company': 'MAZDA',
                 'mark': 'MX 6',
                 'info': '95 PS / 5-seats',

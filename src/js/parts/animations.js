@@ -1,4 +1,4 @@
-// show countries map and car blocks hovering (clicking in mobile) on section top links
+// показываем окоши информации при ховере (при клике на мобльках) на якоря машин и стран на главнойстранице
 
 function showLeftBlocks() {
     const mobileWidth = 768;
@@ -24,6 +24,8 @@ function showLeftBlocks() {
                 let locked = null;
 
                 if (window.innerWidth > mobileWidth) {
+
+                    // при наведении показываем 
                     link.addEventListener('mouseenter', function (e) {
 
                         locked = hoverElems.some(el => checkLocked(el));
@@ -32,6 +34,8 @@ function showLeftBlocks() {
                             this.classList.add('_show');
                         }
                     })
+
+                    // при уведении убираем 
 
                     link.addEventListener('mouseleave', function (e) {
 
@@ -43,12 +47,15 @@ function showLeftBlocks() {
                     })
                 }
 
+                // при клике в зависомости состояния блокировки либо фиксируем либо убираем
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
 
                     if (window.innerWidth > mobileWidth) {
                         locked = hoverElems.some(el => checkLocked(el));
+
                         if (!this.hasAttribute('locked')) {
+                            
                             showElems.forEach(el => {
                                 el.removeAttribute('locked')
                                 el.classList.remove('_show');
@@ -78,6 +85,7 @@ function showLeftBlocks() {
         }
     }
 
+    // проверка на блокировку ховера
     function checkLocked(el) {
         if (el.hasAttribute('locked')) {
             return true;
@@ -87,11 +95,13 @@ function showLeftBlocks() {
         }
     }
 
+    // закрытие на мобильных устройствах
     function closeOnMobile(showElems) {
         for (let i = 0; i < showElems.length; i++) {
             const elem = showElems[i];
             const closeButton = elem.querySelector('button');
 
+            // при лике на кнопку "X"
             closeButton.addEventListener('click', function () {
                 if (elem.classList.contains('_show')) {
                     elem.classList.remove('_show');

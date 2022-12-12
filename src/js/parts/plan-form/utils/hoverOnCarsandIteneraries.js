@@ -1,3 +1,5 @@
+// При наведении на машин и маршрутов в соотв. попапах спава показываем информационную пкошку
+
 export function hoverOnCarsandIteneraries() {
     const itemForms = document.querySelectorAll('.item-form');
     if (itemForms.length) {

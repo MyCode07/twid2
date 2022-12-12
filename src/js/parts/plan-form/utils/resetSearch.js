@@ -1,3 +1,5 @@
+// сброс поиска - убираем все актовные элементы выбранные еэлемнты и ткста везвращаем в исходное положение
+
 import { addToCartButtonStatus } from "../plan-form.js";
 
 export function resetSearch(searchButton) {

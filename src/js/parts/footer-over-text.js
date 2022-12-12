@@ -1,16 +1,21 @@
+// текстовый  элемент над футером разбиваем строку на буквы чтобы правильно растянуть ее по всей ширины экрана вне зависомости от ее ширины
+
 function setFooterOvertext() {
     const footerOverText = document.querySelector('.footer__over-text');
-    const string = [
-        'travel',
-        'with',
-        'drive',
-    ];
-
-    const newString = string.map(item => {
-        return item.replace(/ /g, '').split('')
-    })
 
     if (footerOverText) {
+
+        // получаем текст в массив из слов
+        const string = footerOverText.innerHTML.split(' ');
+
+        // убираем пробелы
+        const newString = string.map(item => {
+            return item.replace(/ /g, '').split('')
+        })
+
+
+        // зачищаем вывод
+        footerOverText.innerHTML = ''
 
         let letter = '';
         for (let i = 0; i < newString.length; i++) {
@@ -24,6 +29,7 @@ function setFooterOvertext() {
             }
             start += end;
 
+            // выводим в элемент
             footerOverText.insertAdjacentHTML('beforeend', start);
         }
     }

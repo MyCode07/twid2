@@ -1,3 +1,5 @@
+// слайдер из месяцов календаря
+
 import { Swiper, Navigation, Grid } from 'swiper';
 
 export function setCalendarSlider(swiper, calendarBody) {
@@ -11,6 +13,7 @@ export function setCalendarSlider(swiper, calendarBody) {
     calendarSwiper.classList.add('swiper');
     calendarBody.classList.add('swiper-wrapper');
 
+    // если в слайдере 2 и меньше месяцов скрываем кнопку вперед
     if (calendarSlides.length <= 2) {
         nextSlideButton.classList.add('_hide');
     }
@@ -21,6 +24,7 @@ export function setCalendarSlider(swiper, calendarBody) {
     calendarSlides.forEach(slide => {
         slide.classList.add('swiper-slide');
 
+        // на  мобилах делаем 2 этажных слайдер
         if (window.innerWidth <= 768 && calendarSlides.length >= 2) {
             slide.classList.add('_grid-slide');
         }
@@ -45,6 +49,7 @@ export function setCalendarSlider(swiper, calendarBody) {
             'nextEl': '.calendar__slider-next',
         },
 
+        // если доходим до канца слайдера убираем кнопку вперед и аналогинчно с кнопкой назад если мы в  начале слайдера
         on: {
             slideChange: function (swiper) {
                 console.log(lastIntex);
@@ -65,6 +70,7 @@ export function setCalendarSlider(swiper, calendarBody) {
             }
         },
 
+        // на  мобилах делаем 2 этажных слайдер
         breakpoints: {
             300: {
                 grid: {

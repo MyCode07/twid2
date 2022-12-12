@@ -1,4 +1,4 @@
-// если емаил уже существует добавлеям тегу form класс _exists 
+// если email уже существует добавлеям тегу form класс _exists 
 
 document.addEventListener('DOMContentLoaded', function (e) {
 
@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     const passwordsAllowElem = document.querySelector('.passwords-allow');
     const generatePasswordElem = document.querySelector('.register-password-generate');
 
+    // скрываем все глазочки паролей
     const showPasswordElem = document.querySelectorAll('.show-password');
     if (showPasswordElem.length) {
         showPasswordElem.forEach(elem => {
@@ -13,9 +14,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
         })
     }
 
-
+    // клики
     document.addEventListener('click', function (e) {
         let targetEl = e.target;
+
+        // клик на кнопку генерации пароля
         if (targetEl.classList.contains('register-password-generate')) {
             registerPasswordElem.value = generatePassword();
             document.querySelector('.show-password').style.display = 'block';
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             formRemoveError(registerPasswordElem)
         }
 
+        // клик на глазок пароля
         if (targetEl.classList.contains('show-password')) {
             targetEl.classList.toggle('_visible');
             const password = targetEl.closest('.form-item').querySelector('input');
@@ -35,10 +39,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
     })
 
-
+    // инпуты
     document.addEventListener('input', function (e) {
         let targetEl = e.target;
 
+        // инпут пароля
         if (targetEl.classList.contains('password')) {
             if (targetEl.value != '') {
 
@@ -57,15 +62,18 @@ document.addEventListener('DOMContentLoaded', function (e) {
             }
         }
 
+        // инпут на все обязательные поля
         if (targetEl.hasAttribute('data-required')) {
+
+            // если это не текстовый инпут убираем пробелы
             if (targetEl.getAttribute("type") !== 'text') {
                 targetEl.value = targetEl.value.replace(/\s+/gi, '')
             }
 
+            // если это инпуты в форм регистрации
             if (targetEl.closest('.register')) {
                 const error = formValidate(targetEl);
                 activateFormButton(error)
-                console.log(error);
             }
         }
     })
@@ -74,7 +82,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
     if (form) {
         form.addEventListener('submit', formSend);
     }
-    
+
+    // функция отравки формы
     async function formSend(e) {
         e.preventDefault();
         const inputs = document.querySelectorAll('[data-required]');
@@ -107,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
     }
 
+    // валидация форм
     function formValidate(input) {
         let error = 0;
 
@@ -132,19 +142,23 @@ document.addEventListener('DOMContentLoaded', function (e) {
         return error;
     }
 
+    // фунцкия добавляет класс ошибки
     function formAddError(input) {
         input.closest('.form-item').classList.add('_novalid');
         input.classList.add('_novalid');
     }
 
+    // фунцкия убирает класс ошибки
     function formRemoveError(input) {
         input.closest('.form-item').classList.remove('_novalid');
         input.classList.remove('_novalid');
     }
 
+    // в зависимости от валидации формы вкл/выкл кнопку отвравки формы
     function activateFormButton(error) {
         const inputs = [...document.querySelectorAll('[data-required]')];
         const sendButton = form.querySelector('button');
+
         inputs.every((input) => {
             if (input.value !== '' && error == 0) {
                 form.classList.add('_valid')
@@ -159,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         })
     }
 
+    // генерация пароля
     function generatePassword() {
         const randomarr = ['$', '%', '&', '?', '#', 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
@@ -168,6 +183,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
 
         let password = '';
+
+        // ровно 8 знаков
         for (let i = 0; i < 8; i++) {
             const value = randomCeloe(0, randomarr.length - 1);
             const item = randomarr[value]

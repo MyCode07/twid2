@@ -479,7 +479,7 @@
             flex-direction: column;
             opacity: 0;
             pointer-events: none;
-            transition: all 0.3s ease 0s;
+            transition: all 0.15s ease 0s;
 
             &[data-show] {
                 opacity: 1;
@@ -577,6 +577,19 @@
 
                     div {
                         display: flex;
+                        flex: 0 0 111px;
+
+                        @media (max-width: 425px) {
+                            flex: 0 0 90px;
+                        }
+
+                        img {
+                            width: 26.5px;
+
+                            @media (max-width: 425px) {
+                                width: 20px;
+                            }
+                        }
 
                         & > :not(:last-child) {
                             margin-right: 4px;
@@ -1417,12 +1430,16 @@
 
     &-body {
         position: relative;
-        top: 394px;
         left: 50%;
         transform: translate(-50%, 0);
         width: 100%;
         max-width: 1100px;
         height: 512px;
+
+        @media (min-width: $mobileWidthMin) {
+            @include adaptive-value("top", 548, 435, 1);
+        }
+
         @media (max-width: $mobileWidthMax) {
             top: 0;
             height: 100%;

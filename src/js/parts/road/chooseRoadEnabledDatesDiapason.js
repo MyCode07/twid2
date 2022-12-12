@@ -1,4 +1,5 @@
-import { addToCartButtonStatus } from "../plan-form/plan-form.js";
+// загружам актовные диапазоны дат для страницы  маршрута
+
 import { monthNames } from "../plan-form/utils/monthNames.js";
 
 export function chooseRoadEnabledDatesDiapason(day) {
@@ -6,6 +7,7 @@ export function chooseRoadEnabledDatesDiapason(day) {
     const allDays = [...month.querySelectorAll('span')];
     const index = allDays.indexOf(day)
 
+    // сортировка диапазонов по числу дня
     const arr = Array.from(findDiapason(index, allDays))
         .sort((a, b) => {
             return +a.textContent - +b.textContent;
@@ -13,7 +15,6 @@ export function chooseRoadEnabledDatesDiapason(day) {
 
     document.querySelectorAll('.diapason').forEach(elem => {
         elem.classList.remove('_choosed');
-        addToCartButtonStatus.date = false
     });
 
     arr.forEach(elem => {
@@ -24,6 +25,8 @@ export function chooseRoadEnabledDatesDiapason(day) {
             elem.classList.add('_choosed');
         }
     });
+
+    // получаем тексты соотв. выбранных диапазонов
 
     const first = arr[0];
     const last = arr[arr.length - 1];
@@ -39,6 +42,8 @@ export function chooseRoadEnabledDatesDiapason(day) {
     let outputText = '';
     let outputDate = '';
 
+
+    // вывод соотв. дат после выбора
     const outputElem = document.querySelector('#road__calendar-month');
 
     if (arr.length == 1) {
@@ -51,14 +56,12 @@ export function chooseRoadEnabledDatesDiapason(day) {
     }
     outputElem.innerHTML = outputDate;
     outputElem.dataset.date = outputText;
-
-
-
-
 }
 
-function findDiapason(index, array) {
 
+// подбор диазаонов в массив из всего календаря маршута
+
+function findDiapason(index, array) {
     let arr = [];
     for (let i = index; i < array.length; i++) {
         const element = array[i];

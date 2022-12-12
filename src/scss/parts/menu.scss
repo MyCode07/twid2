@@ -93,7 +93,7 @@
                 }
 
                 @media (max-width: 425px) {
-                   padding: 15px 10px 20px 15px;
+                    padding: 15px 10px 20px 15px;
                 }
 
                 @media (any-hover: hover) {
@@ -127,17 +127,38 @@
 
                     @include adaptive-value("font-size", 50, 30, 1);
 
+                    @media (min-width: $mobileWidthMin) {
+                        position: relative;
+                        @include adaptive-value("top", -6, -2, 1);
+                    }
+
                     &.hidden-animated {
                         position: absolute;
                         inset: 0;
-                        background-color: $red;
-                        width: calc(100vw - 77px);
-                        transform: translate(0, 0);
                         padding-left: 20px;
+                        width: calc(100vw - 77px);
 
                         visibility: hidden;
                         opacity: 0;
                         @include adaptive-value("max-width", 750, 500, 1);
+                        z-index: 5;
+
+                        @media (min-width: $mobileWidthMin) {
+                            @include adaptive-value("top", -6, -2, 1);
+                        }
+
+                        &:after {
+                            position: absolute;
+                            content: "";
+                            inset: 0;
+                            background-color: $red;
+                            transform: translate(0, 0);
+                            z-index: -1;
+
+                            @media (min-width: $mobileWidthMin) {
+                                @include adaptive-value("top", 6, 2, 1);
+                            }
+                        }
 
                         &:before {
                             position: absolute;

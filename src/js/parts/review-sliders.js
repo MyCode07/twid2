@@ -1,3 +1,4 @@
+// слайдер отзыввов на главной
 
 import Swiper from 'swiper';
 
@@ -10,5 +11,4 @@ function reviewSlider() {
         })
     }
 }
-
 reviewSlider();

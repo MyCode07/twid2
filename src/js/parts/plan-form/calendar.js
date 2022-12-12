@@ -1,5 +1,6 @@
 import { monthNames } from "./utils/monthNames.js";
 
+// основной календарь
 export class Calendar {
 
     constructor(elem, disabledDays, year, month) {
@@ -61,17 +62,26 @@ export class Calendar {
         while (currrentDate <= finalDate) {
 
             let curr_day = '';
+
+            // пустые ячейки
             let emptyClass = '';
+
+            // прежние даты
             let presentClass = '';
+
+            // активные и неактивные даты
             let actionClass = '';
 
+            // проверка на текущий месяц
             if (currrentDate.getMonth() == this.month - 1) {
                 curr_day = currrentDate.getDate();
 
+                // если день уже прошел
                 if (month == new Date().getMonth() + 1 && currrentDate.getDate() < new Date().getDate()) {
                     presentClass = 'present';
                 }
 
+                // в остальных случаях добавлеям активные и неактивные даты
                 else {
                     actionClass = 'enabled';
                     const date = `${this.year}.${month}.${curr_day}`;
@@ -144,6 +154,7 @@ export class Calendar {
     }
 }
 
+// клаендарь для маршрутов
 export class IteneraryCalendar {
 
     constructor(elem, enabledDays, year, month) {
@@ -208,6 +219,8 @@ export class IteneraryCalendar {
             let emptyClass = '';
             let presentClass = '';
             let actionClass = '';
+
+            // отличается тем что здесь показываем диапазоны дат маршрута - все остальные дни неактивные
 
             if (currrentDate.getMonth() == this.month - 1) {
                 curr_day = currrentDate.getDate();

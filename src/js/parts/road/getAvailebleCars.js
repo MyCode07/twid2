@@ -1,3 +1,5 @@
+// доступные машины для маршута в зависомости от выбранного диапазона
+ 
 export function getAvailebleCars(cars) {
     const outputCars = document.querySelector('#road__calendar-cars ol');
     if (cars.length) {

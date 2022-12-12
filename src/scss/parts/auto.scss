@@ -49,6 +49,12 @@
             font-weight: 700;
             line-height: 1.33;
             color: $mainColor;
+            transition: all 0.15s ease 0s;
+
+            &.custom-choise {
+                font-style: italic;
+                border-color: $red;
+            }
 
             @media (max-width: $mobileWidthMax) {
                 height: 40px;
@@ -135,7 +141,7 @@
         position: relative;
 
         &:not(:last-of-type) {
-            @include adaptive-value("margin-bottom", 80, 40, 1);
+            @include adaptive-value("margin-bottom", 56, 40, 1);
 
             &:after {
                 margin-top: 41px;
@@ -165,6 +171,5 @@
         @media (max-width: $mobileWidthMax) {
             grid-template-columns: repeat(2, 1fr);
         }
-
     }
 }

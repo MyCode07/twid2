@@ -1,3 +1,5 @@
+// количество выбранных машин и маршрутов на начал\ных этамах
+
 function getChoosedCounts(checkboxName, activeButton, type) {
     const checkedInputs = [...document.querySelectorAll(`input[name="${checkboxName}"]`)];
     const arr = [];

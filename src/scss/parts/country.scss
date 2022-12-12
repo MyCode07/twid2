@@ -1,10 +1,16 @@
 .countrys {
     @include adaptive-value("padding-bottom", 120, 47, 1);
-    padding-top: 190px;
+    padding-top: 117px;
     position: relative;
+
     @media (max-width: 992px) {
-        padding-top: 150px;
+        padding-top: 70px;
     }
+
+    @media (max-width: 768px) {
+        padding-top: 130px;
+    }
+
     // .countrys__container
 
     &__container {
@@ -54,6 +60,8 @@
             height: 60px;
             width: 100%;
 
+            text-transform: uppercase;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,6 +74,12 @@
             font-weight: 700;
             line-height: 1.33;
             color: $mainColor;
+            transition: all 0.15s ease 0s;
+
+            &.custom-choise {
+                font-style: italic;
+                border-color: $red;
+            }
 
             @media (max-width: $mobileWidthMax) {
                 height: 40px;
@@ -223,7 +237,7 @@
         position: relative;
 
         &:not(:last-of-type) {
-            @include adaptive-value("margin-bottom", 85, 40, 1);
+            @include adaptive-value("margin-bottom", 56, 40, 1);
 
             &:after {
                 margin-top: 41px;

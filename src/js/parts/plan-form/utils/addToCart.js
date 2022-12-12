@@ -1,3 +1,5 @@
+// добавляем уже выбранные значения в попап корзину
+
 export function addToCart() {
     const itenerary = document.querySelector('#final-itenerary').innerHTML;
     const iteneraryDescription = document.querySelector('#final-itenerary').dataset.descr;
@@ -26,6 +28,8 @@ export function addToCart() {
     basketDate.innerHTML = date;
     basketTotalPrice.innerHTML = totalPrice;
     basketPreorderPrice.innerHTML = preorderPrice;
+
+    
     if (basketMapExist) {
         basketMapExist.remove();
     }

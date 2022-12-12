@@ -1,3 +1,5 @@
+// выбранные даты в основном календаре
+
 export function getChoosedDates(dayElement) {
     const defaultText = 'choose your dates';
     const openCalendarButton = document.querySelector('.journey__form-button[id="open-calendar"]');
@@ -22,12 +24,13 @@ export function getChoosedDates(dayElement) {
             const yearEnd = last.closest('.month').dataset.year;
 
 
+            // вывод выбранный дат в соотв. элементы 
             if (choosedDays.length == 1) {
                 outputText = `${monthStart} ${day}`;
                 openCalendarButton.setAttribute('data-date', `${day}.${montStarthNum}.${yearStart}`)
             }
             else {
-                outputText = `${monthStart} ${first.textContent} - ${monthEnd} ${last.textContent}`;
+                outputText = `${monthStart} ${first.textContent} — ${monthEnd} ${last.textContent}`;
                 openCalendarButton.setAttribute('data-date', `${first.textContent}.${montStarthNum}.${yearStart} — ${last.textContent}.${montEndNum}.${yearEnd}`)
             }
         }

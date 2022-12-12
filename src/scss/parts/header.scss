@@ -58,6 +58,19 @@
             align-items: center;
         }
 
+        &.logo-main {
+            img {
+                width: 150px;
+                height: 31.5px;
+
+
+                @media (max-width:768px){
+                    width: 140.5px;
+                    height: 30px;
+                }
+            }
+        }
+
         span {
             @include adaptive-value("margin-left", 29, 0, 1);
 
@@ -304,8 +317,7 @@
 
 .header-page {
     @media (max-width: $mobileWidthMax) {
-
-        .header__body{
+        .header__body {
             border-bottom: 0;
         }
 
